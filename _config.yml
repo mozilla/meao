@@ -1,0 +1,26 @@
+# Dependencies
+highlighter: rouge
+
+# Permalinks
+permalink: pretty
+
+# Setup
+title:               Lanyon
+tagline:             'A Jekyll theme'
+description:         'A reserved <a href="http://jekyllrb.com" target="_blank">Jekyll</a> theme that places the utmost gravity on content with a hidden drawer. Made by <a href="https://twitter.com/mdo" target="_blank">@mdo</a>.'
+url:                 http://lanyon.getpoole.com
+baseurl:             '/meao/'
+paginate:            5
+
+# About/contact
+author:
+  name: Mozilla Marketing Engineering & Operations
+  url: http://mozmar.org
+  email: marketing@mozilla.com
+
+sass:
+  sass_dir: _sass
+  style: :compressed
+
+# Custom vars
+version:             1.0.0
