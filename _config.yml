@@ -9,6 +9,7 @@ title: 'Mozilla Marketing Engineering &amp; Operations'
 tagline: A blog
 description: Things the MozMEAO team has been up to and why.
 url: https://mozilla.github.io/meao/
+baseurl: /meao
 paginate: 5
 gems: [jekyll-paginate]
 exclude:
