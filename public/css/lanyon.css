@@ -438,10 +438,21 @@ a.pagination-item:hover {
 
  body {
   background-image: url(../media/mozmeao.png);
-  background-size: 505px 505px;
+  background-position: calc(50% - 21em) 20px;
   background-repeat: no-repeat;
-  background-position: calc(50% - 34rem) 0px;
- }
+}
+
+@media (min-width: 90em) {
+  body {
+    /* try to keep it vaguly centered in white space */
+    background-position: calc(25% - 17em) 20px;
+    background-attachment: fixed;
+  }
+}
+
+.container {
+  background-color: rgba(255,255,255,0.8);
+}
 
 .sidebar,
 .sidebar-toggle:active,
