@@ -5,21 +5,22 @@ highlighter: rouge
 permalink: pretty
 
 # Setup
-title: 'Mozilla Marketing Engineering &amp; Operations'
-tagline: A blog
+title: "Mozilla Marketing Engineering &amp; Operations"
+tagline: blog
 description: Things the MozMEAO team has been up to and why.
 url: https://mozilla.github.io/meao
 baseurl: /meao
 paginate: 5
-gems: [jekyll-paginate]
+gems:
+  - jekyll-paginate
 exclude:
-- Gemfile
-- Gemfile.lock
-- vendor
+  - Gemfile
+  - Gemfile.lock
+  - vendor
 
 # About/contact
 author:
-  name: Mozilla Marketing Engineering & Operations
+  name: "Mozilla Marketing Engineering & Operations"
   url: http://mozmar.org
   email: marketing@mozilla.com
 
