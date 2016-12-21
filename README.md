@@ -2,7 +2,7 @@
 
 This is the source code repository for the [The Marketing Engineering And Operations Team Blog ](https://mozilla.github.io/meao/).
 
-## install
+## Install
 
 First install [Bundler](http://bundler.io/):
 

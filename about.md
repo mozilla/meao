@@ -4,27 +4,33 @@ title: About
 ---
 
 <p class="message">
-  Hey there! This page is included as an example. Feel free to customize it for your own use upon downloading. Carry on!
+  Hey there! Welcome to the Mozilla <em>Marketing Engineering And Operations</em> team blog. Fear not, you won't hear much marketing jargon here! This is a safe place for engineers to blog about the work we do to support <a href="https://www.mozilla.org/mission/">Mozilla's mission</a>.
 </p>
 
-In the novel, *The Strange Case of Dr. Jeykll and Mr. Hyde*, Mr. Poole is Dr. Jekyll's virtuous and loyal butler. Similarly, Poole is an upstanding and effective butler that helps you build Jekyll themes. It's made by [@mdo](https://twitter.com/mdo).
+## Sites and services we maintain
 
-There are currently two themes built on Poole:
+* [www.mozilla.org](http://www.mozilla.org/)
+* [Mozilla Developer Network (MDN)](https://developer.mozilla.org/)
+* [Mozilla Support (SUMO)](https://support.mozilla.org/)
+* [Snippets Service (about:home)](https://wiki.mozilla.org/Websites/Snippets)
+* [Careers](https://careers.mozilla.org/)
+* [View Source](https://viewsourceconf.org)
 
-* [Hyde](http://hyde.getpoole.com)
-* [Lanyon](http://lanyon.getpoole.com)
+## The team
 
-Learn more and contribute on [GitHub](https://github.com/poole).
+* Benjamin Sternthal, Web Development Manager.
+* [Alex Gibson](https://alxgbsn.co.uk/), Senior Front End Web Developer.
+* Craig Cook, Senior Front End Web Developer.
+* Dave Parfitt, Site Reliability Engineer.
+* Giorgos Logiotatidis, Senior Web Developer.
+* John Whitlock, Senior Web Developer.
+* Jon Petto, Senior Front End Web Developer.
+* Josh Mize, Staff Site Reliability Engineer.
+* Paul McLanahan, Senior Web Developer.
+* Ryan Johnson, Senior Web Developer.
+* Schalk Neethling, Senior Front End Web Developer.
+* Stephanie Hobson, Senior Front End Web Developer.
 
-## Setup
+## Colophon
 
-Some fun facts about the setup of this project include:
-
-* Built for [Jekyll](http://jekyllrb.com)
-* Developed on GitHub and hosted for free on [GitHub Pages](https://pages.github.com)
-* Coded with [Sublime Text 2](http://sublimetext.com), an amazing code editor
-* Designed and developed while listening to music like [Blood Bros Trilogy](https://soundcloud.com/maddecent/sets/blood-bros-series)
-
-Have questions or suggestions? Feel free to [open an issue on GitHub](https://github.com/poole/issues/new) or [ask me on Twitter](https://twitter.com/mdo).
-
-Thanks for reading!
+This site is built using [Jekyll](http://jekyllrb.com/) and hosted on [GitHub](https://github.com/mozilla/meao). Design is based on the [Lanyon](https://github.com/poole/lanyon) Jekyll theme.
