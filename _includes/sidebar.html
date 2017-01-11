@@ -28,6 +28,12 @@
     <a class="sidebar-nav-item" href="{{ site.github.repository_url }}">GitHub project</a>
   </nav>
 
+  <form class="search" action="https://duckduckgo.com/" method="get">
+    <label for="q">Search this site</label>
+    <input type="hidden" name="sites" value="https://mozilla.github.io/meao/">
+    <input class="search-input" type="search" name="q" id="q" placeholder="Powered by DuckDuckGo">
+  </form>
+
   <div class="sidebar-item">
     <p>
       &copy; {{ site.time | date: '%Y' }}. All rights reserved.

@@ -259,6 +259,28 @@ a.sidebar-nav-item:focus {
   }
 }
 
+.sidebar .search {
+  padding: .5rem 1.5rem;
+}
+
+.sidebar .search label {
+  display: block;
+  margin-bottom: .25rem;
+}
+
+.sidebar .search-input {
+  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,.1);
+  font-size: .65rem;
+  height: 1.5rem;
+  line-height: 1.5rem;
+  padding: 0 .2rem;
+  width: 100%;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
 /* Slide effect
  *
  * Handle the sliding effects of the sidebar and content in one spot, seperate
