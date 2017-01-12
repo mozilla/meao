@@ -308,6 +308,10 @@ a.sidebar-nav-item:focus {
           transition: transform .3s ease-in-out;
 }
 
+.sidebar {
+  z-index: 1;
+}
+
 #sidebar-checkbox:checked + .sidebar {
   z-index: 10;
   visibility: visible;
