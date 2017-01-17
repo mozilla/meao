@@ -82,4 +82,4 @@ Find us on [Mozilla IRC](https://wiki.mozilla.org/IRC) in #mozmeao .
 ![Schalk Neethling Photo]({{ site.url }}/meao/images/2017-01-16-introducing-mozmeao/sneethling.jpg)
 * Front End Web Developer
 * IRC: sneethling
-* Location: Vancouver, Canada
+* Location: Pretoria, South Africa
