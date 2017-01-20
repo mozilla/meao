@@ -15,6 +15,7 @@ Find us on [Mozilla IRC](https://wiki.mozilla.org/IRC) in #mozmeao .
 ![Alex Gibson Photo]({{ site.baseurl }}/images/2017-01-16-introducing-mozmeao/agibson.jpg)
 
 * Senior Front End Web Developer
+* GitHub: [alexgibson](https://github.com/alexgibson)
 * IRC: agibson
 * Location: Newcastle Upon Tyne, United Kingdom
 
@@ -22,6 +23,7 @@ Find us on [Mozilla IRC](https://wiki.mozilla.org/IRC) in #mozmeao .
 ![Benjamin Sternthal Photo]({{ site.baseurl }}/images/2017-01-16-introducing-mozmeao/bsternthal.jpg)
 
 * Web Development Manager
+* GitHub: [bensternthal](https://github.com/bensternthal)
 * IRC: bensternthal
 * Location: Portland Oregon, USA
 
@@ -29,6 +31,7 @@ Find us on [Mozilla IRC](https://wiki.mozilla.org/IRC) in #mozmeao .
 ![Craig Cook Photo]({{ site.baseurl }}/images/2017-01-16-introducing-mozmeao/ccook.jpg)
 
 * Senior Front End Web Developer
+* GitHub: [craigcook](https://github.com/craigcook)
 * IRC: craigcook
 * Location: Oakland CA, USA
 
@@ -37,6 +40,7 @@ Find us on [Mozilla IRC](https://wiki.mozilla.org/IRC) in #mozmeao .
 ![Dave Parfitt Photo]({{ site.baseurl }}/images/2017-01-16-introducing-mozmeao/dparfitt.jpg)
 
 * Senior Site Reliability Engineer
+* GitHub: [metadave](https://github.com/metadave)
 * IRC: metadave
 * Location: Buffalo NY, USA
 
@@ -44,6 +48,7 @@ Find us on [Mozilla IRC](https://wiki.mozilla.org/IRC) in #mozmeao .
 ![Giorgos Logiotatidis Photo]({{ site.baseurl }}/images/2017-01-16-introducing-mozmeao/glogiotatidis.jpg)
 
 * Senior Web Developer
+* GitHub: [glogiotatidis](https://github.com/glogiotatidis)
 * IRC: giorgos
 * Location: Athens, GR
 
@@ -51,6 +56,7 @@ Find us on [Mozilla IRC](https://wiki.mozilla.org/IRC) in #mozmeao .
 ![John Whitlock Photo]({{ site.baseurl }}/images/2017-01-16-introducing-mozmeao/jwhitlock.jpg)
 
 * Senior Web Developer
+* GitHub: [jwhitlock](https://github.com/jwhitlock)
 * IRC: jwhitlock
 * Location: Tulsa OK, USA
 
@@ -58,6 +64,7 @@ Find us on [Mozilla IRC](https://wiki.mozilla.org/IRC) in #mozmeao .
 ![Jon Petto Photo]({{ site.baseurl }}/images/2017-01-16-introducing-mozmeao/jpetto.jpg)
 
 * Senior Front End Web Developer
+* GitHub: [jpetto](https://github.com/jpetto)
 * IRC: jpetto
 * Location: Chicago IL, USA
 
@@ -65,6 +72,7 @@ Find us on [Mozilla IRC](https://wiki.mozilla.org/IRC) in #mozmeao .
 ![Josh Mize Photo]({{ site.baseurl }}/images/2017-01-16-introducing-mozmeao/jmize.jpg)
 
 * Senior Staff Site Reliability Engineer
+* GitHub: [jgmize](https://github.com/jgmize)
 * IRC: jgmize
 * Location: Tulsa OK, USA
 
@@ -72,6 +80,7 @@ Find us on [Mozilla IRC](https://wiki.mozilla.org/IRC) in #mozmeao .
 ![Paul McLanahan Photo]({{ site.baseurl }}/images/2017-01-16-introducing-mozmeao/pmac.jpg)
 
 * Senior Web Developer
+* GitHub: [pmac](https://github.com/pmac)
 * IRC: pmac
 * Location: Atlanta GA, USA
 
@@ -79,6 +88,7 @@ Find us on [Mozilla IRC](https://wiki.mozilla.org/IRC) in #mozmeao .
 ![Ryan Johnson Photo]({{ site.baseurl }}/images/2017-01-16-introducing-mozmeao/rjohnson.jpg)
 
 * Senior Web Developer
+* GitHub: [escattone](https://github.com/escattone)
 * IRC: rjohnson
 * Location: Portland OR, USA
 
@@ -86,6 +96,7 @@ Find us on [Mozilla IRC](https://wiki.mozilla.org/IRC) in #mozmeao .
 ![Stephanie Hobson Photo]({{ site.baseurl }}/images/2017-01-16-introducing-mozmeao/shobson.jpg)
 
 * Senior Front End Web Developer
+* GitHub: [stephaniehobson](https://github.com/stephaniehobson)
 * IRC: shobson
 * Location: Vancouver, Canada
 
@@ -93,5 +104,6 @@ Find us on [Mozilla IRC](https://wiki.mozilla.org/IRC) in #mozmeao .
 ![Schalk Neethling Photo]({{ site.baseurl }}/images/2017-01-16-introducing-mozmeao/sneethling.jpg)
 
 * Front End Web Developer
+* GitHub: [schalkneethling](https://github.com/schalkneethling)
 * IRC: sneethling
 * Location: Pretoria, South Africa
