@@ -71,7 +71,7 @@ Find us on [Mozilla IRC](https://wiki.mozilla.org/IRC) in #mozmeao .
 ### Josh Mize
 ![Josh Mize Photo]({{ site.baseurl }}/images/2017-01-16-introducing-mozmeao/jmize.jpg)
 
-* Senior Staff Site Reliability Engineer
+* Staff Site Reliability Engineer
 * GitHub: [jgmize](https://github.com/jgmize)
 * IRC: jgmize
 * Location: Tulsa OK, USA
