@@ -20,7 +20,7 @@ exclude:
 
 # About/contact
 author:
-  name: "Mozilla Marketing Engineering & Operations"
+  name: "Mozilla Marketing Engineering &amp; Operations"
   url: http://mozmar.org
   email: marketing@mozilla.com
 
