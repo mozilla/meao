@@ -3,7 +3,7 @@ layout: post
 title: Introducing MozMEAO
 ---
 
-MozMEAO stands for **Mozilla Marketing Engineering and Operations**, we are the team of front end engineers, back end engineers and SRE's that run Mozilla's marketing websites and services. We are best known for [Mozilla.org](https://www.mozilla.org) & [The Mozilla Developer Network](https://developer.mozilla.org).
+MozMEAO stands for **Mozilla Marketing Engineering and Operations**. We are the team of engineers that run Mozilla's marketing websites and services, including the front end, back end, and infrastructure. We are best known for [Mozilla.org](https://www.mozilla.org) & [The Mozilla Developer Network](https://developer.mozilla.org).
 
 Find us on [Mozilla IRC](https://wiki.mozilla.org/IRC) in #mozmeao .
 
