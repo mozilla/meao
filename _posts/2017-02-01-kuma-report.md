@@ -57,10 +57,10 @@ submitted the pull request to remove the
 [Intern tests](https://github.com/mozilla/kuma/pull/4099). We now have
 a library of browser-based functional tests to verify that an integrated
 environment is serving MDN correctly. Giorgos Logiotatidis (giorgos) has
-[re-written the Jenkins integration pipeline](https://github.com/mozilla/kuma/pull/4102)
-for both Bedrock and MDN, providing a framework for automated acceptance
-testing.  There's more work to do, but we have a good foundation for
-automatically detecting more issues before they appear in production.
+[re-written the Jenkins integration pipeline](https://github.com/mozilla/kuma/pull/4102),
+providing a framework for automated acceptance testing.  There's more work to
+do, but we have a good foundation for automatically detecting more issues
+before they appear in production.
 
 Switched from Stylus to Sass for CSS
 ---
