@@ -102,13 +102,14 @@ coming, or if you are having trouble sleeping.
 Shipped Tweaks and Fixes
 ---
 Other highlights from January:
-* [PR 4070](https://github.com/mozilla/kuma/pull/4070):
+
+- [PR 4070](https://github.com/mozilla/kuma/pull/4070):
   Improve error message when tag list is too long
   ([gautamramk](https://github.com/gautamramk)'s first PR!).
-* [PR 4089](https://github.com/mozilla/kuma/pull/4089):
+- [PR 4089](https://github.com/mozilla/kuma/pull/4089):
   Add Bulgarian to the candidate languages, and enable on the
   [staging server](https://developer.allizom.org/bg/).
-* [PR 4095](https://github.com/mozilla/kuma/pull/4095):
+- [PR 4095](https://github.com/mozilla/kuma/pull/4095):
   Add rel="nofollow" to non-indexable links
   (the first of several PRs from Jon Petto
   ([jpetto](https://github.com/jpetto)).
