@@ -349,7 +349,7 @@ a.sidebar-nav-item:focus {
 }
 
 /* Meta data line below post title */
-.post-date {
+.post-meta {
   display: block;
   margin-top: -.5rem;
   margin-bottom: 1rem;
@@ -463,7 +463,7 @@ a.pagination-item:hover {
  * MozMEAO Theme
  */
 
- body {
+body {
   background-image: url(../media/mozmeao.png);
   background-position: calc(50% - 21em) 20px;
   background-repeat: no-repeat;

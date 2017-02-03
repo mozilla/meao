@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Traffic Cop - Simple & lightweight A/B testing
+author: Jon Petto
 ---
 
 We [recently added](https://github.com/mozilla/bedrock/pull/4361) a home-grown A/B testing framework to bedrock, the codebase powering [mozilla.org](https://www.mozilla.org). We named it Traffic Cop, as most of our content experiments simply redirect users to a different URL.
@@ -28,10 +29,10 @@ Implementing Traffic Cop requires two <sup>[3](#trafficcop-footnote2)</sup> othe
 // this is an example of a configuration file
 // assume Traffic Cop & the MDN cookie helper scripts are already loaded
 var wiggum = new Mozilla.TrafficCop({
-  id: ‘experiment-home-page-hero-image-fall-2016’,
+  id: 'experiment-home-page-hero-image-fall-2016',
   variations: {
-    ‘v=1’: 20,
-    ‘v=2’: 30
+    'v=1': 20,
+    'v=2': 30
   }
 });
 
@@ -51,4 +52,3 @@ In summary, Traffic Cop allows us to write code in a text editor, review code in
 <a name="trafficcop-footnote2">2</a>: [pmac](https://github.com/pmac) wrote a really handy [mixin and view](https://github.com/mozilla/bedrock/commit/71d528ea36bd58017da15143d318c173e61c53b1#diff-529dc1131d3cef60d7b817029d3314b3) to make working with Traffic Cop even easier.
 
 <a name="trafficcop-footnote3">3</a>: Okay, yes, you looked at [the source](https://github.com/mozilla/bedrock/blob/master/media/js/base/mozilla-traffic-cop.js#L76) and saw Traffic Cop looks for a globally scoped function by the name of `_dntEnabled`. Guilty. However, Traffic Cop carries on just fine if `_dntEnabled` doesn’t exist, so simmer down. As you’ve probably already guessed, [`_dntEnabled` is a function that checks the doNotTrack status of the visitor’s browser](https://github.com/mozilla/bedrock/blob/2fb16c05fbb847b57e0fbbea8a5b51d51d554e43/media/js/base/dnt-helper.js). Be a conscientious developer and respect this setting for your visitors as well.
-

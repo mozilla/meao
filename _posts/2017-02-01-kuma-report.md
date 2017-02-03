@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Kuma Report, January 2017
-author: jwhitlock
+author: John Whitlock
 excerpt_separator: <!--more-->
 ---
 

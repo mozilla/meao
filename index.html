@@ -12,7 +12,9 @@ title: Home
       </a>
     </h1>
 
-    <span class="post-date">{{ post.date | date_to_string }}</span>
+    <span class="post-meta">
+      <time datetime="{{ post.date | date: "%Y-%m-%d" }}">{{ post.date | date_to_string }}</time>, {{ post.author }}
+    </span>
 
     {{ post.content }}
   </div>

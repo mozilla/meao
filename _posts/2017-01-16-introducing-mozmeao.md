@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Introducing MozMEAO
+author: Benjamin Sternthal
 ---
 
 MozMEAO stands for **Mozilla Marketing Engineering and Operations**. We are the team of engineers that run Mozilla's marketing websites and services, including the front end, back end, and infrastructure. We are best known for [Mozilla.org](https://www.mozilla.org) & [The Mozilla Developer Network](https://developer.mozilla.org).
