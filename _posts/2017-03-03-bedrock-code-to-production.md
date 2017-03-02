@@ -53,7 +53,7 @@ Because our example page inherits from a common base template it automatically r
 - Page component styling using [Pebbles](https://github.com/mozilla/bedrock/tree/master/media/css/pebbles); our own lightweight CSS framework. Pebbles consists of a shared library of styles for common elements that appear throughout the site (e.g. page headers, navigation, footers, email signup forms, download buttons). Working with common design components allows us to create and update pages quickly.
 - Pre-built for [localization](http://bedrock.readthedocs.io/en/latest/l10n.html) (l10n). All pages are coded with strings wrapped ready for l10n. This means that copy and visuals should be suitable for different languages and designed to work well with variable length strings.
 - Built-in platform detection for Firefox downloads. We go to great lengths to try and make sure users get the correct binary file for their operating system and language when clicking on a download button. All pages get this logic for free should they need it.
-- Privacy friendly. We work hard to make sure all our pages respect user privacy as much as possible. We support [Do Not Track](https://en.wikipedia.org/wiki/Do_Not_Track) (DNT), so users with this enabled are not tracked in Google Analytics or entered into [Firefox Desktop Attribution](https://support.mozilla.org/t5/Protect-your-privacy/About-Firefox-Desktop-Attribution/ta-p/1361183). They will also not be entered into A/B experiments using libraries such as [Traffic Cop](http://bedrock.readthedocs.io/en/latest/mozilla-traffic-cop.html).
+- Privacy friendly. We work hard to make sure all our pages respect user privacy as much as possible. We support [Do Not Track](https://en.wikipedia.org/wiki/Do_Not_Track) (DNT), so users with this enabled are not tracked in Google Analytics or entered into [Firefox Desktop Attribution](https://support.mozilla.org/t5/Protect-your-privacy/About-Firefox-Desktop-Attribution/ta-p/1361183). They will also not be entered into A/B experiments using libraries such as [Traffic Cop](https://github.com/mozilla/trafficcop/).
 - Security focused. We enforce an active [Content Security Policy](https://en.wikipedia.org/wiki/Content_Security_Policy) (CSP) that limits the scope of third-party content allowed to run on the site. This aims to protect our users from security attacks and also helps ensure the integrity of Firefox downloads. It is a critical feature for our visitors.
 - Built using [progressive enhancement](https://en.wikipedia.org/wiki/Progressive_enhancement) and with [accessibility](https://en.wikipedia.org/wiki/Web_accessibility) in mind. User experiences need to work well with keyboard, mouse and touch, and work well with [screen reading software](https://en.wikipedia.org/wiki/Screen_reader). Pages should still function or degrade gracefully even if JavaScript fails, or is disabled by the user.
 
@@ -127,6 +127,7 @@ Once our page is coded and we're ready for the next step, we can open a [pull re
   - Our continuous integration service, [CircleCI](https://circleci.com/), runs a series of automated checks on the pull request. This runs unit tests as well as checks the code for both syntax and style errors. Running these automated checks saves us significant time during code review by picking out routine errors.
   - The pull request must then be code reviewed by another human. Every code change gets reviewed by at least one other developer before merging.
   - If the change requires localization, strings are extracted from the branch and checked by our l10n team. If they look good, they are sent out to our volunteers for translation. Once this has begun, it is **very bad** to make a breaking change to a piece of copy.
+  - Once the pull request is approved by a reviewer, it can then be merged into the master branch and automatically deployed to our dev environment.
 
 ## Other useful things to know about
 
@@ -146,15 +147,15 @@ the developer of their new demo's URL. Feel free to check out
 
 ### A/B testing
 
-For A/B testing bedrock has two options available, [Traffic Cop](http://bedrock.readthedocs.io/en/latest/mozilla-traffic-cop.html) and [Optimizely](https://www.optimizely.com/). [Jon](https://github.com/jpetto/) wrote a great blog post on the pros and cons of using each solution so we won't repeat them here. You should [go read it]({{ site.baseurl }}/2017/01/16/traffic-cop/).
+For A/B testing bedrock has two options available, [Traffic Cop](https://github.com/mozilla/trafficcop/) and [Optimizely](https://www.optimizely.com/). [Jon](https://github.com/jpetto/) wrote a great blog post on the pros and cons of using each solution so we won't repeat them here. You should [go read it]({{ site.baseurl }}/2017/01/16/traffic-cop/).
 
 ### Analytics
 
-Analytics on bedrock are provided using [Google Tag Manager](https://www.google.com/analytics/tag-manager/) (GTM). Most of bedrocks shared components and pages are pre-built for analytics using common [event handlers and data attributes](http://bedrock.readthedocs.io/en/latest/analytics.html#gtm-listeners-data-attributes). We can also create and fire [custom events](http://bedrock.readthedocs.io/en/latest/analytics.html#datalayer-push-example) as required.
+Analytics on bedrock are provided using [Google Tag Manager](https://www.google.com/analytics/tag-manager/) (GTM). Most of bedrock's shared components and pages are pre-built for analytics using common [event handlers and data attributes](http://bedrock.readthedocs.io/en/latest/analytics.html#gtm-listeners-data-attributes). We can also create and fire [custom events](http://bedrock.readthedocs.io/en/latest/analytics.html#datalayer-push-example) as required.
 
 GTM on bedrock is implemented in such a way that it respects DNT, and user experiences should not break if tracking protection or content blocking software is installed.
 
-## Feature toggling
+### Feature toggling
 
 Product deployments are easier than ever for bedrock, but they're not and likely will never be without risk. There is also much
 that could go wrong (at AWS or any of our networks) that could prevent a production deployment from being successful or timely.
@@ -166,11 +167,11 @@ These switches are very useful in situations that require precise timing, or mod
 support for a failed deployment would be light to nonexistent. We've used them for announcements that need to be timed with
 announcement publications elsewhere, or stage events at gatherings like Mobile World Congress.
 
-### Deployment
+## Deployment
 
-We deploy production fairly often, and we deploy to our dev instance on every push to our `master` branch. 
+We deploy production fairly often, and we deploy to our dev instance on every push to our `master` branch.
 We are capable of deploying production many times per day, and like to deploy at least once per day.
-When any of our development team is happy with what is on dev and ready to deploy to produciton, they have only to follow these steps:
+When any of our development team is happy with what is on dev and ready to deploy to production, they have only to follow these steps:
 
 1. Check the [deployment pipeline](https://ci.us-west.moz.works/blue/organizations/jenkins/bedrock_multibranch_pipeline/branches)
 to make sure the latest master branch build was a success.
@@ -182,7 +183,7 @@ and will start its deployment process:
 
 1. Build the necessary docker images
 2. Test said docker images
-  - Python unittests
+  - Python unit tests
   - Selenium-based smoke tests run against the app running locally
 3. Push docker images to [public docker hub](https://hub.docker.com/r/mozorg/bedrock/) and our private registries
 4. Tell Deis to deploy the new docker images to the staging app in our Oregon AWS cluster
@@ -193,8 +194,8 @@ and will start its deployment process:
 If any testing phase fails we are notified in IRC and the deployment is halted. The whole process usually takes around an hour.
 
 A deployment to our [dev instance](https://www-dev.allizom.org) is very similar to our production deployment (above).
-The primary differences are that it happens on every push to `master`, and fewer integration tests are run agasint the deployed app.
-Our dev instance is also slightly different in that the `DEV` setting is set to `True`, which primarly means that a development
+The primary differences are that it happens on every push to `master`, and fewer integration tests are run against the deployed app.
+Our dev instance is also slightly different in that the `DEV` setting is set to `True`, which primarily means that a development
 version of our localization files is used so that localizers have a stable site from which to view their work-in-progress, and
 all feature switches are on by default.
 
@@ -224,3 +225,7 @@ The primary domain for both stage and prod points to our CDN provider, which in 
 [AWS Route53](https://aws.amazon.com/route53/). This domain uses latency-based routing to send clients to the fastest
 servers from their location. So each node at the CDN should get routed to the closest server cluster to it. This also means
 that we get automatic fail-over in case one cluster goes down or starts throwing errors.
+
+## Conclusion
+
+Whew! That's a lot of information to take in. With any luck, our example page would now be magically deployed in production after going through the pipeline. Our process for deployment may sound a bit complicated, and that's because it is. The reason we've built this kind of automation is so we can remove as many manual steps as possible, saving us time and also helping us to deploy with greater speed and confidence.
