@@ -71,7 +71,7 @@ Not much to it right? The key here is that all the page information is still per
 
 For critical download pages such as our example page, we still need to ensure that users can successfully download Firefox, even in older browsers. When the user clicks the download button, they still need to receive the correct file for their operating system and language.
 
-Because of this added support requirement, download pages may require additional testing and QA. For really high traffic pages such as `/firefox/new/`, we may still make extra effort to provide a higher level of CSS support to older browsers. The pages won't look look exactly the same, but they should still degrade gracefully.
+Because of this added support requirement, download pages may require additional testing and QA. For really high traffic pages such as `/firefox/new/`, we may still make extra effort to provide a higher level of CSS support to older browsers. The pages won't look exactly the same, but they should still degrade gracefully.
 
 ### Localization (l10n)
 
