@@ -10,6 +10,8 @@ Bedrock is the code name for the project that runs [www.mozilla.org](https://www
 
 Bedrock is a large [Django](https://www.djangoproject.com/) app that has many moving parts, with web pages translated into [many](https://www.mozilla.org/de/) [different](https://www.mozilla.org/fr/) [languages](https://www.mozilla.org/es-ES/) ([99 locales](https://github.com/mozilla/bedrock/blob/5ab2a7df5d1d5f03e79c7b04c48b69559edacca4/bedrock/settings/base.py#L129-L141) at time of writing!). This post aims to follow a piece of code through the development lifecycle; from bug, to pull request, to code review, localization, and finally pushed live to production. Hopefully it may prove insightful and give some things to think about when requesting changes or creating new content.
 
+**Note:** A presentation was given on this topic. The [slides](https://pmac.github.io/presentations/bedrock-code-to-prod/) and [video](https://air.mozilla.org/bedrock-from-code-to-production/) from that event are online.
+
 ## The change request
 
 All development work should start with [filing a bug](https://bugzilla.mozilla.org/enter_bug.cgi?product=www.mozilla.org&component=Pages%20%26%20Content). [Bugzilla](https://bugzilla.mozilla.org/) is our tool of choice for tracking changes, and links to bugs can be found throughout our [commit history](https://github.com/mozilla/bedrock/commits/master) for reference. This gives us a paper trail for *when and why* changes were made. For a site that has existed over many years, this is *very* useful.
