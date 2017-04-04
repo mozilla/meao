@@ -30,7 +30,7 @@ Content Experiments Framework
 We're planning to experiment with small, interactive examples at the top of
 high-traffic reference pages. We want to see the effects of this change,
 by showing the new content to some of the users, and tracking their
-behaviour.  We shipped ia new A/B testing framework, using the
+behavior.  We shipped a new A/B testing framework, using the
 [Traffic Cop](https://github.com/mozilla/trafficcop) library in the browser.
 We'll use the framework for the examples experiment, starting in April.
 
@@ -96,7 +96,7 @@ still tricky.  This month, we'll tackle some of the known issues:
 * Remove the legacy macros from MDN (stuck in time at November 2016)
 * Remove macro editing from MDN
 * Update macro searching
-* Start on a automated testing framework for KumaScript macros
+* Start on an automated testing framework for KumaScript macros
 
 Improve and Maintain CSS Quality
 ---
