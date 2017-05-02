@@ -19,7 +19,7 @@ The SRE team is currently evaluating different [CDN options](https://github.com/
 
 ##### Bedrock moving to Kubernetes
 
-Our Fleet and Deis 1 infrastructure will eventually be replaced with Kubernetes and Deis Workflow. [pmac](https://github.com/pmac) and [jgmize](https://github.com/jgmize/) have bedrock deployed in our Virginia Kubernetes cluster. Minor issues with https redirects were uncovered that should be resolved shortly. Next steps are getting integration tests working and trying Cloudfront with this deployment.
+Our Fleet and Deis 1 infrastructure will eventually be replaced with Kubernetes and Deis Workflow. [pmac](https://github.com/pmac) and [jgmize](https://github.com/jgmize/) have bedrock deployed in our Virginia Kubernetes cluster. Minor issues with https redirects were uncovered, but have been resolved. Next steps are getting integration tests working and trying Cloudfront with this deployment.
 
 ##### Bedrock log analysis
 
