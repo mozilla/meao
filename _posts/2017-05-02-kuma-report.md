@@ -54,6 +54,11 @@ language misuse. They can be jerks about the small stuff so that code reviewers
 can focus on the ideas in the new code. We added several new linters to our
 development process:
 
+* [stylelint](https://stylelint.io) checks Kuma's stylesheets, which required
+  some work to get into the proper format.
+  ([PR 4167](https://github.com/mozilla/kuma/pull/4167),
+   [PR 4170](https://github.com/mozilla/kuma/pull/4170), and
+   [PR 4170](https://github.com/mozilla/kuma/pull/4170))
 * [ESLint](http://eslint.org) can be used to check Kuma's JavaScript. Our JS
   needs work.
   ([PR 4199](https://github.com/mozilla/kuma/pull/4199))
@@ -93,6 +98,21 @@ Here's some other highlights from the
 [41 merged Kuma PRs](https://github.com/mozilla/kuma/pulls?page=1&q=is%3Apr+is%3Aclosed+merged%3A%222017-04-01+..2017-05-01%22&utf8=✓)
 in April:
 
+- [PR 4144](https://github.com/mozilla/kuma/pull/4144):
+  In the page history, enable comparing the first translation to the English source
+  ([safwanrahman](https://github.com/safwanrahman)).
+- [PR 4158](https://github.com/mozilla/kuma/pull/4158):
+  When creating a sub-page of a redirected page, create the sub-page at the
+  new URL
+  ([safwanrahman](https://github.com/safwanrahman)).
+- [PR 4171](https://github.com/mozilla/kuma/pull/4171):
+  Enable [Bulgarian](https://developer.mozilla.org/bg/) as a supported
+  language. This was a small code change backed by a lot of work from
+   [kberov](https://github.com/kberov) and
+   [jswisher](https://github.com/jmswisher).
+- [PR 4173](https://github.com/mozilla/kuma/pull/4173):
+  Deprecate KumaScript editing on MDN, and reduce the static assets
+  ([stephaniehobson](https://github.com/stephaniehobson)).
 - [PR 4181](https://github.com/mozilla/kuma/pull/4181):
   For page watch emails for a first translation, show a diff to the original
   English text, and prepare for more email changes
