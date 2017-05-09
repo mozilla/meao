@@ -48,7 +48,7 @@ Deis Workflow has been [upgraded to latest version (2.14.20) in Virginia and Tok
 - Metrics have been [validated](https://github.com/mozmar/infra/issues/174) for snippets-stats in Virginia and Tokyo.
 - Application memory/CPU limits and autoscaling have been [configured in Tokyo and Virginia](https://github.com/mozmar/infra/issues/164).
 
-#### Issues with `HTTP_X_FORWARDED_PROTO` header not set for for snippets-*.virginia.moz.works
+#### Issues with `HTTP_X_FORWARDED_PROTO` header not set for for `snippets-*.virginia.moz.works`
 
 We created a generic [http to https redirector](https://github.com/mozmar/infra/pull/163) [service](https://github.com/mozmar/infra/blob/master/k8s/install/stage2_functions.sh#L303-L305) that runs in Kubernetes. This allows Kubernetes to handle forwarding `http` to `https` for us without having custom implementations in each application. However, there remained an [issue](https://github.com/mozmar/infra/issues/101) in our current ELB setup where `HTTP_X_FORWARDED_PROTO` was not set, and thus Django cannot be aware whether a connection is secure or not.
 
