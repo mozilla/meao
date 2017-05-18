@@ -39,9 +39,6 @@ On May 13th, 2017 22:49 -22:55, New Relic reported that MDN was unavailable.  Th
 
 On May 14th, 2017, there were high I/O alerts on 3 of the 6 production web servers. This was not reflected in high traffic or a decrease in responsiveness.
 
-The incident report is available [here](https://docs.google.com/document/d/1DtV8DBXZqat0YvnFasOxeOyJZUaOZL40CuuVxTA-bgA/edit#)
-
-
 ### Basket
 
 The FxA team would like to [send events](https://bugzilla.mozilla.org/show_bug.cgi?id=1358123) (FXA_IDs) to Basket and Salesforce, and needed SQS queues in order to move forward. We automated the [provisioning of dev/stage/prod SQS queues](https://github.com/mozmar/infra/issues/208), and passed off credentials to the appropriate engineers.
@@ -54,8 +51,6 @@ The [FxA team requested cross AWS account access](https://bugzilla.mozilla.org/s
 ##### Snippets Stats Collection Issues 2017-04-10
 
 A planned configuration change to add a Route 53 Traffic Policy for the snippets stats collection service caused a day’s worth of data to not be collected due to a SSL certificate error.
-
-The incident report is available [here](https://docs.google.com/document/d/1qc0a19Fk1gS6iHAsErkjx4OQ1NHnTkjvuvxCK1vRKtU/edit)
 
 ### Careers
 
@@ -71,9 +66,6 @@ In order to take advantage of Kubernetes cluster and pod autoscaling (which we'v
 
 A typo was merged and pushed to production and caused a couple of minutes of downtime before we rolled-back to the previous version.
 
-The incident report is available [here](https://goo.gl/Re3vdP)
-
-
 ### Decommission openwebdevice.org status
 
 openwebdevice.org will remain operational in http-only mode until the [board approves decommissioning](https://github.com/mozmar/infra/issues/205#issuecomment-300524422). A timeline is unavailable.
@@ -88,9 +80,9 @@ We're planning to move nucleus to Kubernetes, and then proceed to decommissionin
 
 We're planning to move basket to Kubernetes shortly after the nucleus migration, and then proceed to decommissioning existing infra.
 
-
 ## Links
 
 - [Github project tracking SRE work](https://github.com/mozmar/infra/projects/2)
 - [How MozMEAO SRE's work](https://github.com/mozmar/infra/blob/master/docs/how_we_work.md)
 - [Weekly SRE meeting notes](https://goo.gl/WuhP0Y)
+
