@@ -11,11 +11,6 @@ Here's what happened on the MozMEAO SRE team from June 6th - June 13th.
 
 ## Current work
 
-### irlpodcast.org provisioning
-
-[We've provisioned](https://github.com/mozmar/infra/issues/283) infrastructure for [https://irlpodcast.org](https://irlpodcast.org), including S3 and CloudFront resources.
-More about this site coming soon!
-
 ### Frankfurt Kubernetes cluster provisioning
 
 [We're provisioning](https://github.com/mozmar/infra/issues/293) a new Kubernetes 1.6.4 cluster in Frankfurt (`eu-central-1`). This cluster takes advantage of features in new versions of [kops](https://github.com/kubernetes/kops), [helm](https://helm.sh/), and [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/).
