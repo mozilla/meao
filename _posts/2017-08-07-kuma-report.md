@@ -30,7 +30,7 @@ In June, we revealed the new MDN web docs design to beta testers. In July,
 [Stephanie Hobson](https://github.com/stephaniehobson) and [Schalk
 Neethling](https://github.com/schalkneethling) fixed many bugs, adjusted
 styles, shipped the homepage redesign, and answered a lot of feedback.
-The new design was shipped to all MDN Web Docs users on July 25th, and the old
+The new design was shipped to all MDN Web Docs users on July 25, and the old
 design files were retired.
 
 The redesign was a big change, with some interesting problems that called for
@@ -79,6 +79,19 @@ There were many PRs merged in July:
 
 Some highlights:
 
+- [Kuma PR 4338](https://github.com/mozilla/kuma/pull/4338):
+  Move the locale files from kuma to their own repository,
+  [mozilla-l10n/mdn-l10n](https://github.com/mozilla-l10n/mdn-l10n),
+  from [John Whitlock](https://github.com/jwhitlock).
+  This will allow for the higher volume of locale changes when KumaScript
+  string are added, without requiring unnecessary source builds.
+- [Interactive Examples PR 156](https://github.com/mdn/interactive-examples/pull/156/files):
+  Update to publishing to S3, fixing
+  [issue #54](https://github.com/mdn/interactive-examples/issues/54), from
+  [Schalk Neethling](https://github.com/schalkneethling).
+  The S3 bucket, resources, and process were set up by
+  [Dave Parfitt](https://github.com/metadave), with details in
+  [mozmeao/infra issue #362](https://github.com/mozmeao/infra/issues/362).
 - [Kumascript PR 220](https://github.com/mdn/kumascript/pull/220):
   Update specification names and URLs. This is the first contribution from
   [Domenic Denicola](https://github.com/domenic).
@@ -104,7 +117,7 @@ Some highlights:
   Add MS Edge support for localization, from first-time contributor
   [Yordan Darakchiev](https://github.com/iordan93).
 - [Data PR 99](https://github.com/mdn/data/pull/99):
-  Add schema validation from groups parameter, from
+  Add schema validation for groups parameter, from
   [Sebastian Zartner](https://github.com/SebastianZ)
 
 Planned for August
@@ -120,12 +133,12 @@ harder to change these aspects than global headers and footers, so it may be
 a while before you see the fruits of this design process.
 
 Work continues on the interactive examples. They have gone through several
-review and bug fix cycles, and a production deployment method has been chosen
-and implemented
-([PR 149](https://github.com/mdn/interactive-examples/pull/149)). There's
-been interest and work to enable contributions
+review and bug fix cycles, and have a working production deployment system.
+There's been interest and work to enable contributions
 ([Issue 99](https://github.com/mdn/interactive-examples/issues/99)).
-See the [projects page](https://github.com/mdn/interactive-examples/projects)
+In August, we'll launch user testing, and enable the new examples for beta
+testers.  See the 
+[projects page](https://github.com/mdn/interactive-examples/projects)
 for the remaining work.
 
 Update Localization of Macros
@@ -138,13 +151,11 @@ Kuma are translated in
 [Pontoon](https://pontoon.mozilla.org/projects/mdn/) into 57 languages. We'd
 like to use a similar workflow for strings in macros.
 
-In [PR 4338](https://github.com/mozilla/kuma/pull/4338)
-we moved the locale files from kuma to their own repository
-([mozilla-l10n/mdn-l10n](https://github.com/mozilla-l10n/mdn-l10n)).
-This will allow for a higher volume of locale changes without requiring
-unnecessary source builds. In August, we'll assemble the toolchain for
-localizing strings at render time, and for extracting the localizable strings
-for translation in Pontoon.
+In August, we'll assemble the toolchain for localizing strings at render time,
+and for extracting the localizable strings for translation in Pontoon.
+Converting the macros to use localizable strings will be a long process, but
+there's a lot of community interest in translations, so we should get some
+help.
 
 Establish Maintenance Mode in AWS
 ---
