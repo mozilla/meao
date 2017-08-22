@@ -25,7 +25,7 @@ Here's what happened on the MozMEAO SRE team from August 15th - August 22nd.
 
 ### Upcoming Portland Deis 1 cluster decommissioning
 
-The Deis 1 cluster in Portland [decommissioning](https://github.com/mozmeao/infra/issues/404)has been pushed out until next week due to support issues related to other applications.
+The Deis 1 cluster in Portland [decommissioning](https://github.com/mozmeao/infra/issues/404) has been pushed out until next week due to support issues related to other applications.
 
 ## Links
 
