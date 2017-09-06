@@ -30,7 +30,8 @@ On August 29, we launched the interactive examples. We're starting with showing
 them to 50% of anonymous users, to measure the difference in site speed.
 You can also visit the new pages directly. See the
 [interactive editors in beta](https://discourse.mozilla.org/t/interactive-editors-in-beta/18548)
-post on Discourse for more details, and to give your feedback.
+post on Discourse for more details. We're collecting feedback with a short
+survey. See the "take our survey" link below the new interactive example.
 
 We've already gotten several rounds of feedback, by showing early iterations
 to Mozilla staff and to the [Brigade](https://wearebrigade.com/),
