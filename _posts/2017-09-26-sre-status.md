@@ -21,7 +21,7 @@ We've successfully completed a series of tests against MDN hosted in AWS.
 - [Manually test maintenance mode in prod AWS](https://github.com/mozmeao/infra/issues/515) (success 🎉)
 - [Manually test maintenance mode in SCL3 stage](https://github.com/mozmeao/infra/issues/510) (success 🎉)
 - [Maintenance mode traffic test: 5% to K8s](https://github.com/mozmeao/infra/issues/516) (success 🎉)
-- [Maintenance mode traffic test: 15% /50% / 100%](https://github.com/mozmeao/infra/issues/518) (success 🎉)
+- [Maintenance mode traffic test: 15% / 50% / 100%](https://github.com/mozmeao/infra/issues/518) (success 🎉)
 
 #### Migration work
 
