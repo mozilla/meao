@@ -204,10 +204,12 @@ redesign and the new interactive examples.
 
 Move MDN to AWS
 ---
-In October, we'll complete our functional testing of MDN, making sure that
+This week, we'll complete our functional testing of MDN, making sure that
 page editing and other read/write tests are working, and that the rarely used
-features continue to work. We'll then put SCL3 in Maintenance Mode again,
-move the database, and come back with MDN in AWS.
+features continue to work.
+
+On Tuesday October 10, we'll put SCL3 in Maintenance Mode again, move the
+database, and come back with MDN in AWS.
 
 We've done a lot of preparation, but we expect *something* to break, so we're
 planning on fixing AWS-related bugs in October. The AWS move will also allow
