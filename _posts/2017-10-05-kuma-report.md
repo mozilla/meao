@@ -124,10 +124,15 @@ redesign.
 
 Continued Conversion to Browser Compat Data
 ---
-The Browser Compat Data project moved very quickly in September. There were 159
-commits over 90 PRs from 18 different contributors. There's over 58,000
-additional lines in the project. 13 of these PRs are from
-[Daniel D. Beck](https://github.com/ddbeck), who is joining us as a contractor.
+The Browser Compat Data (BCD) project now includes all the HTML and JavaScript
+compatibility data from MDN. 1,500 MDN pages now generate their compatibility
+tables from this data. Only 4,500 more to go!
+
+The BCD project was the most active MDN project in September.  There were 159
+commits over 90 pull requests. These PRs came from from 18 different
+contributors, bringing the total to 50 contributors. There's over 58,000
+additional lines in the project.  13 of these PRs are from [Daniel D.
+Beck](https://github.com/ddbeck), who is joining the MDN team as a contractor.
 
 This progress was made possible by
 [Florian Scholz](https://github.com/Elchi3),
