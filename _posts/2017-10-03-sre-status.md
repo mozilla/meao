@@ -17,7 +17,7 @@ We've successfully completed a series of tests against MDN hosted in AWS, but we
 
 #### Testing
 
-- An MDN maintenance mode test is scheduled today, October 3rd 2017, at 2pm eastern / 11 pacific
+- A successful MDN maintenance mode test was performed on Tuesday October 3rd 2017, at 2pm eastern / 11 pacific.
 
 #### Migration work
 
