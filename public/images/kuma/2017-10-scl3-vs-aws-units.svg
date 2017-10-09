@@ -1,0 +1,85 @@
+<svg version="1.1"
+     baseProfile="full"
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="245" height="210">
+  <title>SCL3 vs AWS Deployment Units</title>
+  <defs>
+    <style type="text/css"><![CDATA[
+      text.title {
+        stroke: black;
+        font-family: serif;
+        font-size: 24px;
+      }
+      .server-boxes use {
+        stroke: black;
+        stroke-width: 3;
+        fill: white;
+      }
+      .server-boxes text {
+        stroke: black;
+        font-family: sans-serif;
+        font-size: 14px;
+      }
+      .container-web use {
+        stroke: blue;
+      }
+      .container-api use {
+        stroke: red;
+      }
+      .container-ks use {
+        stroke: green;
+      }
+      .container-celery use {
+        stroke: purple;
+      }
+    ]]></style>
+    <g id="def-scl3-box">
+      <rect rx="5" ry="5" width="90" height="130" />
+    </g>
+    <g id="def-aws-box">
+      <rect rx="5" ry="5" width="90" height="70" />
+    </g>
+    <g id="def-container">
+      <rect width="55" height="35" />
+    </g>
+  </defs>
+
+  <g id="scl3-side">
+    <text x="70" y="30" class="title" text-anchor="middle">SCL3</text>
+    <g class="server-boxes">
+      <g transform="translate(25, 50)">
+        <g>
+          <use xlink:href="#def-scl3-box" />
+          <text x="5" y="20">OS</text>
+          <text x="5" y="40">Apache</text>
+          <text x="5" y="60">Python</text>
+          <text x="5" y="80">Kuma</text>
+          <text x="5" y="100">Node.js</text>
+          <text x="5" y="120">KumaScript</text>
+        </g>
+      </g>
+    </g>
+  </g>
+  <g id="aws-side" transform="translate(120, 0)">
+    <text x="70" y="30" class="title" text-anchor="middle">AWS</text>
+    <g class="server-boxes">
+      <g id="aws-row1" transform="translate(25, 50)">
+        <g id="aws-server1">
+          <use xlink:href="#def-aws-box" />
+          <text x="5" y="20">OS</text>
+          <text x="5" y="40">Python</text>
+          <text x="5" y="60">Kuma</text>
+        </g>
+      </g>
+      <g id="aws-row2" transform="translate(25, 130)">
+        <g id="aws-server2">
+          <use xlink:href="#def-aws-box" />
+          <text x="5" y="20">OS</text>
+          <text x="5" y="40">Node.js</text>
+          <text x="5" y="60">KumaScript</text>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
