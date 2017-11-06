@@ -32,7 +32,7 @@ Done in October
 
 MDN Migrated to AWS
 ---
-On October 10th, we moved MDN from Mozilla's SCL3 datacenter to a
+On October 10, we moved MDN from Mozilla's SCL3 datacenter to a
 [Kubernetes](https://en.wikipedia.org/wiki/Kubernetes) cluster in
 the AWS ``us-west2`` (Oregon) region. The database move went well, but we
 needed five times the web resources as the maintenance mode tests. We were
@@ -69,7 +69,7 @@ served from Kuma.
                  "Untrusted domain: 197 GB (98% of bytes) from CDN")
 
 There is a reduced load on Kuma as well. The CDN can handle many requests, so
-Kuma doesn't see them at all. The CDN perodically checks with Kuma that content
+Kuma doesn't see them at all. The CDN periodically checks with Kuma that content
 hasn't changed, which often requires a short ``304 Not Modified`` rather than
 the full response.
 
@@ -93,7 +93,7 @@ Continued Migration of Browser Compatibility Data
 The [Browser Compatibility Data](https://github.com/mdn/browser-compat-data/)
 project was the most active MDN project in October.  Another 700 MDN pages use
 the BCD data, bringing us up to 2200 MDN pages, or 35.5% of the pages with
-compatibilty data.
+compatibility data.
 
 [Daniel D. Beck](https://github.com/ddbeck) continues migrating the CSS data,
 which will take at least the rest of 2017.
@@ -149,7 +149,7 @@ contributions. Here are some of the highlights:
   ([BCD PR 484](https://github.com/mdn/browser-compat-data/pull/484)),
   from first-time contributor
   [lpd-au](https://github.com/lpd-au).
-- Split webext JSONs
+- Split WebExt JSONs
   ([BCD PR 488](https://github.com/mdn/browser-compat-data/pull/488)),
   from
   [wbamberg](https://github.com/wbamberg).
@@ -167,11 +167,11 @@ contributions. Here are some of the highlights:
   ([BCD PR 517](https://github.com/mdn/browser-compat-data/pull/517)),
   from first-time BCD contributor
   [jsx](https://github.com/riverspirit).
-- Update regex anchored sticky flag compatibilty
+- Update regex anchored sticky flag compatibility
   ([BCD PR 561](https://github.com/mdn/browser-compat-data/pull/561)),
   from first-time contributor
   [John Lenz](https://github.com/concavelenz).
-- Update IE and Edge version compatibility for the button form attr
+- Update IE and Edge version compatibility for the button form attribute
   ([BCD PR 566](https://github.com/mdn/browser-compat-data/pull/566)),
   from first-time contributor
   [cb-josh-c](https://github.com/cb-josh-c).
@@ -210,7 +210,7 @@ contributions. Here are some of the highlights:
   ([KumaScript PR 347](https://github.com/mdn/kumascript/pull/347)),
   from first-time KS contributor
   [Jean-Yves Perrier](https://github.com/teoli2003).
-- Add translations for fr locale
+- Add translations for French (fr) locale
   ([KumaScript PR 353](https://github.com/mdn/kumascript/pull/353)),
   from first-time contributor
   [Kévin C](https://github.com/zecakeh).
@@ -298,8 +298,8 @@ follow the remaining issues in the
 Update Localization of KumaScript Macros
 ---
 In August, we planned the toolkit we'd use to extract strings from
-KumaScript macros - see
-[bug 1340342](https://bugzilla.mozilla.org/show_bug.cgi?id=1340342#c4).
+KumaScript macros (see
+[bug 1340342](https://bugzilla.mozilla.org/show_bug.cgi?id=1340342#c4)).
 We put implementation on hold until after the AWS migration. In November,
 we'll dust off the plans and get some sample macros converted. We're hopeful
 the community will make short work of the rest of the macros.
@@ -309,7 +309,7 @@ the community will make short work of the rest of the macros.
 The AWS migration project started in
 [November 2014](https://public.etherpad-mozilla.org/p/r.c171c5789092370bcb021ccd7e320375),
 [bug 1110799](https://bugzilla.mozilla.org/show_bug.cgi?id=1110799).
-The original plan was to switch by Summer 2015, but the technical and
+The original plan was to switch by summer 2015, but the technical and
 organizational hurdles proved harder than expected. At the same time, the team
 removed many legacy barriers making Kuma hard to migrate. A highlight of the
 effort was the Mozilla All Hands in December 2015, where the team merged
