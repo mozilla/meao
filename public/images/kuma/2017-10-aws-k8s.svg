@@ -2,7 +2,7 @@
      baseProfile="full"
      xmlns="http://www.w3.org/2000/svg"
      xmlns:xlink="http://www.w3.org/1999/xlink"
-     width="800" height="400">
+     width="800" height="450">
   <title>Kubernetes's view of AWS Production</title>
   <defs>
     <style type="text/css"><![CDATA[
@@ -32,7 +32,11 @@
         stroke: black;
         stroke-width: 3;
       }
-      #def-deployment6 line, #def-deployment2 line {
+      #def-deployment2 line,
+      #def-deployment6 line,
+      #def-deployment10 line,
+      #def-deployment20 line
+      {
         stroke-width: 1;
       }
       .server-boxes text {
@@ -54,69 +58,100 @@
       }
     ]]></style>
     <g id="def-cluster">
-      <rect rx="5" ry="5" width="564" height="340" />
-      <line x1="1" y1="170" x2="563" y2="170" />
-      <line x1="141" y1="1" x2="141" y2="339" />
-      <line x1="282" y1="1" x2="282" y2="339" />
-      <line x1="423" y1="1" x2="423" y2="339" />
+      <rect rx="5" ry="5" width="565" height="380" />
+      <line x1="1" y1="190" x2="564" y2="190" />
+      <line x1="113" y1="1" x2="113" y2="379" />
+      <line x1="226" y1="1" x2="226" y2="379" />
+      <line x1="339" y1="1" x2="339" y2="379" />
+      <line x1="452" y1="1" x2="452" y2="379" />
     </g>
     <g id="def-namespace">
-      <rect rx="5" ry="5" width="514" height="280" />
+      <rect rx="5" ry="5" width="514" height="320" />
     </g>
     <g id="def-port">
       <circle cx="5" cy="20" r="5" />
       <line x1="10" y1="20" x2="20" y2="20" />
-    </g>
-    <g id="def-service6">
-      <use xlink:href="#def-port" />
-      <rect x="20" y="0" rx="5" ry="5" width="150" height="40" />
-      <use xlink:href="#def-deployment6" transform="translate(170, 0)"/>
     </g>
     <g id="def-service2">
       <use xlink:href="#def-port" />
       <rect x="20" y="0" rx="5" ry="5" width="150" height="40" />
       <use xlink:href="#def-deployment2" transform="translate(170, 0)"/>
     </g>
-    <g id="def-deployment6">
-      <rect x="0" y="0" rx="5" ry="5" width="300" height="40" />
-      <line x1="55" y1="1" x2="50" y2="39" />
-      <line x1="100" y1="1" x2="100" y2="39" />
-      <line x1="150" y1="1" x2="150" y2="39" />
-      <line x1="200" y1="1" x2="200" y2="39" />
-      <line x1="250" y1="1" x2="250" y2="39" />
+    <g id="def-service6">
+      <use xlink:href="#def-port" />
+      <rect x="20" y="0" rx="5" ry="5" width="150" height="40" />
+      <use xlink:href="#def-deployment6" transform="translate(170, 0)"/>
+    </g>
+    <g id="def-service20">
+      <use xlink:href="#def-port" />
+      <rect x="20" y="0" rx="5" ry="5" width="150" height="40" />
+      <use xlink:href="#def-deployment20" transform="translate(170, 0)"/>
     </g>
     <g id="def-deployment2">
-      <rect x="0" y="0" rx="5" ry="5" width="100" height="40" />
-      <line x1="50" y1="1" x2="50" y2="39" />
+      <rect x="0" y="0" rx="5" ry="5" width="60" height="40" />
+      <line x1="30" y1="1" x2="30" y2="39" />
+    </g>
+    <g id="def-deployment6">
+      <rect x="0" y="0" rx="5" ry="5" width="180" height="40" />
+      <line x1="30" y1="1" x2="30" y2="39" />
+      <line x1="60" y1="1" x2="60" y2="39" />
+      <line x1="90" y1="1" x2="90" y2="39" />
+      <line x1="120" y1="1" x2="120" y2="39" />
+      <line x1="150" y1="1" x2="150" y2="39" />
+    </g>
+    <g id="def-deployment10">
+      <rect x="0" y="0" rx="5" ry="5" width="300" height="40" />
+      <line x1="30" y1="1" x2="30" y2="39" />
+      <line x1="60" y1="1" x2="60" y2="39" />
+      <line x1="90" y1="1" x2="90" y2="39" />
+      <line x1="120" y1="1" x2="120" y2="39" />
+      <line x1="150" y1="1" x2="150" y2="39" />
+      <line x1="180" y1="1" x2="180" y2="39" />
+      <line x1="210" y1="1" x2="210" y2="39" />
+      <line x1="240" y1="1" x2="240" y2="39" />
+      <line x1="270" y1="1" x2="270" y2="39" />
+    </g>
+    <g id="def-deployment20">
+      <rect x="0" y="0" rx="5" ry="5" width="300" height="76" />
+      <line x1="1" y1="40" x2="299" y2="39" />
+      <line x1="30" y1="1" x2="30" y2="75" />
+      <line x1="60" y1="1" x2="60" y2="75" />
+      <line x1="90" y1="1" x2="90" y2="75" />
+      <line x1="120" y1="1" x2="120" y2="75" />
+      <line x1="150" y1="1" x2="150" y2="75" />
+      <line x1="180" y1="1" x2="180" y2="75" />
+      <line x1="210" y1="1" x2="210" y2="75" />
+      <line x1="240" y1="1" x2="240" y2="75" />
+      <line x1="270" y1="1" x2="270" y2="75" />
     </g>
   </defs>
 
   <g id="portland-cluster" class="server-boxes" transform="translate(55, 15)">
     <use xlink:href="#def-cluster" />
     <rect class="text-background" x="14" y="8" width="170" height="20" />
-    <text x="15" y="22">Portland Cluster (8 nodes)</text>
+    <text x="15" y="22">Portland Cluster (10 nodes)</text>
     <g id="mdn-prod-namespace" transform="translate(25, 40)">
       <use xlink:href="#def-namespace" />
       <rect class="text-background" x="14" y="8" width="145" height="20" />
       <text x="15" y="22">Namespace mdn-prod</text>
       <g class="deployment-web" transform="translate(20, 45)">
-        <use xlink:href="#def-service6" />
+        <use xlink:href="#def-service20" />
         <text x="30" y="25">Service web</text>
         <rect class="text-background" x="179" y="10" width="170" height="20" />
-        <text x="180" y="25">Deployment web (6 pods)</text>
+        <text x="180" y="25">Deployment web (20 pods)</text>
       </g>
-      <g class="deployment-ks" transform="translate(20, 105)">
+      <g class="deployment-ks" transform="translate(20, 145)">
         <use xlink:href="#def-service6" />
         <text x="30" y="25">Service kumascript</text>
         <rect class="text-background" x="179" y="10" width="210" height="20" />
         <text x="180" y="25">Deployment kumascript (6 pods)</text>
       </g>
-      <g class="deployment-celery" transform="translate(190, 165)">
-        <use xlink:href="#def-deployment6" />
+      <g class="deployment-celery" transform="translate(190, 205)">
+        <use xlink:href="#def-deployment10" />
         <rect class="text-background" x="9" y="10" width="180" height="20" />
-        <text x="10" y="25">Deployment celery (6 pods)</text>
+        <text x="10" y="25">Deployment celery (10 pods)</text>
       </g>
-      <g class="deployment-api" transform="translate(20, 225)">
+      <g class="deployment-api" transform="translate(20, 265)">
         <use xlink:href="#def-service2" />
         <text x="30" y="25">Service api</text>
         <rect class="text-background" x="179" y="10" width="160" height="22" />
@@ -127,8 +162,10 @@
   <g id="external-web-port" transform="translate(35, 100)">
     <use xlink:href="#def-port" />
     <line x1="20" y1="20" x2="70" y2="20" />
-    <line x1="5" y1="20" x2="5" y2="275" />
-    <line x1="5" y1="275" x2="55" y2="275" />
-    <text x="65" y="278">developer.mozilla.org (via ELB)</text>
+    <line x1="5" y1="20" x2="5" y2="336" />
+    <line x1="5" y1="315" x2="55" y2="315" />
+    <text x="65" y="318">developer.mozilla.org (via ELB)</text>
+    <line x1="5" y1="335" x2="55" y2="335" />
+    <text x="65" y="338">mdn.mozillademos.org (via ELB)</text>
   </g>
 </svg>
