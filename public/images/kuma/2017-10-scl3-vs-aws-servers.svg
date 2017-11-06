@@ -2,7 +2,7 @@
      baseProfile="full"
      xmlns="http://www.w3.org/2000/svg"
      xmlns:xlink="http://www.w3.org/1999/xlink"
-     width="810" height="360">
+     width="790" height="390">
   <title>SCL3 vs AWS Servers</title>
   <defs>
     <style type="text/css"><![CDATA[
@@ -27,7 +27,7 @@
       .container-api use {
         stroke: red;
       }
-      .container-ks use {
+      .container-kscript use {
         stroke: green;
       }
       .container-celery use {
@@ -38,10 +38,10 @@
       <rect rx="5" ry="5" width="75" height="50" />
     </g>
     <g id="def-aws-box">
-      <rect rx="5" ry="5" width="125" height="85" />
+      <rect rx="5" ry="5" width="185" height="55" />
     </g>
     <g id="def-container">
-      <rect width="55" height="35" />
+      <rect width="55" height="20" />
     </g>
   </defs>
 
@@ -99,7 +99,7 @@
     </g>
   </g>
   <g id="aws-side" transform="translate(350, 0)">
-    <text x="235" y="30" class="title" text-anchor="middle">AWS</text>
+    <text x="215" y="30" class="title" text-anchor="middle">AWS</text>
     <g class="server-boxes">
       <g id="aws-row1" transform="translate(25, 50)">
         <!-- Full box
@@ -107,128 +107,215 @@
           <use xlink:href="#def-aws-box" />
           <g class="container" transform="translate(5, 5)">
             <use xlink:href="#def-container" />
-            <text x="27.5" y="22" text-anchor="middle">1-1</text>
+            <text x="27.5" y="15" text-anchor="middle">1-1</text>
           </g>
           <g class="container" transform="translate(65, 5)">
             <use xlink:href="#def-container" />
-            <text x="27.5" y="22" text-anchor="middle">1-2</text>
+            <text x="27.5" y="15" text-anchor="middle">1-2</text>
           </g>
-          <g class="container" transform="translate(5, 45)">
+          <g class="container" transform="translate(125, 5)">
             <use xlink:href="#def-container" />
-            <text x="27.5" y="22" text-anchor="middle">2-1</text>
+            <text x="27.5" y="15" text-anchor="middle">1-3</text>
           </g>
-          <g class="container" transform="translate(65, 45)">
+          <g class="container" transform="translate(5, 30)">
             <use xlink:href="#def-container" />
-            <text x="27.5" y="22" text-anchor="middle">2-2</text>
+            <text x="27.5" y="15" text-anchor="middle">2-1</text>
+          </g>
+          <g class="container" transform="translate(65, 30)">
+            <use xlink:href="#def-container" />
+            <text x="27.5" y="15" text-anchor="middle">2-2</text>
+          </g>
+          <g class="container" transform="translate(125, 30)">
+            <use xlink:href="#def-container" />
+            <text x="27.5" y="15" text-anchor="middle">2-3</text>
           </g>
         </g>
         -->
         <g id="aws-server1">
           <use xlink:href="#def-aws-box" />
-          <g class="container-api" transform="translate(65, 5)">
+          <g class="container-celery" transform="translate(5, 5)">
             <use xlink:href="#def-container" />
-            <text x="27.5" y="22" text-anchor="middle">api</text>
+            <text x="27.5" y="15" text-anchor="middle">celery</text>
           </g>
-          <g class="container-ks" transform="translate(5, 45)">
+          <g class="container-web" transform="translate(125, 5)">
             <use xlink:href="#def-container" />
-            <text x="27.5" y="22" text-anchor="middle">kscript</text>
+            <text x="27.5" y="15" text-anchor="middle">web</text>
           </g>
-          <g class="container-web" transform="translate(65, 45)">
+          <g class="container-web" transform="translate(5, 30)">
             <use xlink:href="#def-container" />
-            <text x="27.5" y="22" text-anchor="middle">web</text>
+            <text x="27.5" y="15" text-anchor="middle">web</text>
           </g>
-        </g>
-        <g id="aws-server2" transform="translate(150, 0)">
-          <use xlink:href="#def-aws-box" />
-          <g class="container-ks" transform="translate(65, 5)">
+          <g class="container-web" transform="translate(65, 30)">
             <use xlink:href="#def-container" />
-            <text x="27.5" y="22" text-anchor="middle">kscript</text>
+            <text x="27.5" y="15" text-anchor="middle">web</text>
           </g>
-          <g class="container-web" transform="translate(5, 45)">
+          <g class="container-kscript" transform="translate(125, 30)">
             <use xlink:href="#def-container" />
-            <text x="27.5" y="22" text-anchor="middle">web</text>
-          </g>
-          <g class="container-celery" transform="translate(65, 45)">
-            <use xlink:href="#def-container" />
-            <text x="27.5" y="22" text-anchor="middle">celery</text>
+            <text x="27.5" y="15" text-anchor="middle">kscript</text>
           </g>
         </g>
-        <g id="aws-server3" transform="translate(300, 0)">
+        <g id="aws-server2" transform="translate(200, 0)">
           <use xlink:href="#def-aws-box" />
-          <g class="container-web" transform="translate(5, 5)">
+          <g class="container-kscript" transform="translate(5, 5)">
             <use xlink:href="#def-container" />
-            <text x="27.5" y="22" text-anchor="middle">web</text>
+            <text x="27.5" y="15" text-anchor="middle">kscript</text>
           </g>
-          <g class="container-celery" transform="translate(5, 45)">
+          <g class="container-celery" transform="translate(125, 5)">
             <use xlink:href="#def-container" />
-            <text x="27.5" y="22" text-anchor="middle">celery</text>
+            <text x="27.5" y="15" text-anchor="middle">celery</text>
+          </g>
+          <g class="container-kscript" transform="translate(5, 30)">
+            <use xlink:href="#def-container" />
+            <text x="27.5" y="15" text-anchor="middle">kscript</text>
+          </g>
+          <g class="container-celery" transform="translate(65, 30)">
+            <use xlink:href="#def-container" />
+            <text x="27.5" y="15" text-anchor="middle">celery</text>
+          </g>
+          <g class="container-web" transform="translate(125, 30)">
+            <use xlink:href="#def-container" />
+            <text x="27.5" y="15" text-anchor="middle">web</text>
           </g>
         </g>
       </g>
-      <g id="aws-row2" transform="translate(25, 160)">
-        <g id="aws-server4">
-          <use xlink:href="#def-aws-box" />
-          <g class="container-ks" transform="translate(5, 5)">
-            <use xlink:href="#def-container" />
-            <text x="27.5" y="22" text-anchor="middle">kscript</text>
-          </g>
-          <g class="container-celery" transform="translate(65, 45)">
-            <use xlink:href="#def-container" />
-            <text x="27.5" y="22" text-anchor="middle">celery</text>
-          </g>
-        </g>
-        <g id="aws-server5" transform="translate(150, 0)">
+      <g id="aws-row2" transform="translate(25, 120)">
+        <g id="aws-server3">
           <use xlink:href="#def-aws-box" />
           <g class="container-celery" transform="translate(5, 5)">
             <use xlink:href="#def-container" />
-            <text x="27.5" y="22" text-anchor="middle">celery</text>
-          </g>
-          <g class="container-web" transform="translate(65, 45)">
-            <use xlink:href="#def-container" />
-            <text x="27.5" y="22" text-anchor="middle">web</text>
+            <text x="27.5" y="15" text-anchor="middle">celery</text>
           </g>
         </g>
-        <g id="aws-server6" transform="translate(300, 0)">
+        <g id="aws-server4" transform="translate(200, 0)">
           <use xlink:href="#def-aws-box" />
-          <g class="container-ks" transform="translate(65, 5)">
+          <g class="container-web" transform="translate(5, 5)">
             <use xlink:href="#def-container" />
-            <text x="27.5" y="22" text-anchor="middle">kscript</text>
+            <text x="27.5" y="15" text-anchor="middle">web</text>
           </g>
-          <g class="container-celery" transform="translate(5, 45)">
+          <g class="container-celery" transform="translate(65, 5)">
             <use xlink:href="#def-container" />
-            <text x="27.5" y="22" text-anchor="middle">celery</text>
+            <text x="27.5" y="15" text-anchor="middle">celery</text>
           </g>
-          <g class="container-api" transform="translate(65, 45)">
+          <g class="container-web" transform="translate(5, 30)">
             <use xlink:href="#def-container" />
-            <text x="27.5" y="22" text-anchor="middle">api</text>
+            <text x="27.5" y="15" text-anchor="middle">web</text>
+          </g>
+          <g class="container-celery" transform="translate(125, 30)">
+            <use xlink:href="#def-container" />
+            <text x="27.5" y="15" text-anchor="middle">celery</text>
           </g>
         </g>
       </g>
-      <g id="aws-row3" transform="translate(100, 270)">
+      <g id="aws-row3" transform="translate(25, 190)">
+        <g id="aws-server5">
+          <use xlink:href="#def-aws-box" />
+          <g class="container-web" transform="translate(5, 5)">
+            <use xlink:href="#def-container" />
+            <text x="27.5" y="15" text-anchor="middle">web</text>
+          </g>
+          <g class="container-celery" transform="translate(125, 5)">
+            <use xlink:href="#def-container" />
+            <text x="27.5" y="15" text-anchor="middle">celery</text>
+          </g>
+          <g class="container-web" transform="translate(5, 30)">
+            <use xlink:href="#def-container" />
+            <text x="27.5" y="15" text-anchor="middle">web</text>
+          </g>
+          <g class="container-web" transform="translate(65, 30)">
+            <use xlink:href="#def-container" />
+            <text x="27.5" y="15" text-anchor="middle">web</text>
+          </g>
+          <g class="container-web" transform="translate(125, 30)">
+            <use xlink:href="#def-container" />
+            <text x="27.5" y="15" text-anchor="middle">web</text>
+          </g>
+        </g>
+        <g id="aws-server6" transform="translate(200, 0)">
+          <use xlink:href="#def-aws-box" />
+          <g class="container-web" transform="translate(5, 5)">
+            <use xlink:href="#def-container" />
+            <text x="27.5" y="15" text-anchor="middle">web</text>
+          </g>
+          <g class="container-celery" transform="translate(65, 5)">
+            <use xlink:href="#def-container" />
+            <text x="27.5" y="15" text-anchor="middle">celery</text>
+          </g>
+          <g class="container-web" transform="translate(125, 5)">
+            <use xlink:href="#def-container" />
+            <text x="27.5" y="15" text-anchor="middle">web</text>
+          </g>
+          <g class="container-web" transform="translate(65, 30)">
+            <use xlink:href="#def-container" />
+            <text x="27.5" y="15" text-anchor="middle">web</text>
+          </g>
+        </g>
+      </g>
+      <g id="aws-row4" transform="translate(25, 260)">
         <g id="aws-server7">
           <use xlink:href="#def-aws-box" />
-          <g class="container-web" transform="translate(5, 5)">
+          <g class="container-web" transform="translate(125, 5)">
             <use xlink:href="#def-container" />
-            <text x="27.5" y="22" text-anchor="middle">web</text>
+            <text x="27.5" y="15" text-anchor="middle">web</text>
           </g>
-          <g class="container-ks" transform="translate(65, 5)">
+          <g class="container-web" transform="translate(5, 30)">
             <use xlink:href="#def-container" />
-            <text x="27.5" y="22" text-anchor="middle">kscript</text>
+            <text x="27.5" y="15" text-anchor="middle">web</text>
+          </g>
+          <g class="container-api" transform="translate(65, 30)">
+            <use xlink:href="#def-container" />
+            <text x="27.5" y="15" text-anchor="middle">api</text>
+          </g>
+          <g class="container-api" transform="translate(125, 30)">
+            <use xlink:href="#def-container" />
+            <text x="27.5" y="15" text-anchor="middle">api</text>
           </g>
         </g>
-        <g id="aws-server8" transform="translate(150, 0)">
+        <g id="aws-server8" transform="translate(200, 0)">
           <use xlink:href="#def-aws-box" />
           <g class="container-celery" transform="translate(5, 5)">
             <use xlink:href="#def-container" />
-            <text x="27.5" y="22" text-anchor="middle">celery</text>
+            <text x="27.5" y="15" text-anchor="middle">celery</text>
+          </g>
+          <g class="container-kscript" transform="translate(65, 5)">
+            <use xlink:href="#def-container" />
+            <text x="27.5" y="15" text-anchor="middle">kscript</text>
+          </g>
+          <g class="container-web" transform="translate(125, 5)">
+            <use xlink:href="#def-container" />
+            <text x="27.5" y="15" text-anchor="middle">web</text>
+          </g>
+          <g class="container-kscript" transform="translate(5, 30)">
+            <use xlink:href="#def-container" />
+            <text x="27.5" y="15" text-anchor="middle">kscript</text>
+          </g>
+          <g class="container-web" transform="translate(65, 30)">
+            <use xlink:href="#def-container" />
+            <text x="27.5" y="15" text-anchor="middle">web</text>
+          </g>
+        </g>
+      </g>
+      <g id="aws-row5" transform="translate(125, 330)">
+        <g id="aws-server9">
+          <use xlink:href="#def-aws-box" />
+          <g class="container-celery" transform="translate(5, 5)">
+            <use xlink:href="#def-container" />
+            <text x="27.5" y="15" text-anchor="middle">celery</text>
           </g>
           <g class="container-web" transform="translate(65, 5)">
             <use xlink:href="#def-container" />
-            <text x="27.5" y="22" text-anchor="middle">web</text>
+            <text x="27.5" y="15" text-anchor="middle">web</text>
           </g>
-          <g class="container-ks" transform="translate(65, 45)">
+          <g class="container-web" transform="translate(5, 30)">
             <use xlink:href="#def-container" />
-            <text x="27.5" y="22" text-anchor="middle">kscript</text>
+            <text x="27.5" y="15" text-anchor="middle">web</text>
+          </g>
+          <g class="container-web" transform="translate(65, 30)">
+            <use xlink:href="#def-container" />
+            <text x="27.5" y="15" text-anchor="middle">web</text>
+          </g>
+          <g class="container-kscript" transform="translate(125, 30)">
+            <use xlink:href="#def-container" />
+            <text x="27.5" y="15" text-anchor="middle">kscript</text>
           </g>
         </g>
       </g>

@@ -129,7 +129,7 @@
   <g id="portland-cluster" class="server-boxes" transform="translate(55, 15)">
     <use xlink:href="#def-cluster" />
     <rect class="text-background" x="14" y="8" width="170" height="20" />
-    <text x="15" y="22">Portland Cluster (10 nodes)</text>
+    <text x="15" y="22">Portland Cluster (9 nodes)</text>
     <g id="mdn-prod-namespace" transform="translate(25, 40)">
       <use xlink:href="#def-namespace" />
       <rect class="text-background" x="14" y="8" width="145" height="20" />

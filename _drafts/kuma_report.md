@@ -419,11 +419,11 @@ A big part of understanding Kubernetes is learning the vocabulary.
 [Kubernetes Concepts](https://kubernetes.io/docs/concepts/) is a good place
 to start. Here's how some of these concepts are implemented for MDN:
 
-* Eleven EC2 instances in AWS are configured as
+* Ten EC2 instances in AWS are configured as
   **[Nodes](https://kubernetes.io/docs/concepts/architecture/nodes/)**, and
-  joined into a Kubernetes **Cluster**. Our Cluster is in the Oregon AWS
-  region, and we call it the Portland Cluster. Ten Codes are available for
-  application usage, and the master Node runs the Cluster.
+  joined into a Kubernetes **Cluster**. Our "Portland Cluster" is in the
+  ``us-west2`` (Oregon) AWS region. Nine Nodes are available for application
+  usage, and the master Node runs the Cluster.
 * The ``mdn-prod``
   **[Namespace](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/)**
   collects the resources that need to collaborate to make MDN work. The
@@ -478,7 +478,8 @@ If a Node fails, replacement Pods will be created on surviving Nodes.
 The Kubernetes system allows several ways to scale the application. We used
 some for handling the unexpected load of the user attachments:
 
-* We went from 10 to 12 Nodes, to increase the total capacity of the Cluster.
+* We went from 10 to 12 Nodes, to increase the total capacity of the Cluster,
+  then back down again when we got things under control.
 * We scaled the ``web`` Deployment from 6 to 20 Pods, to handle more
   simultaneous connections, including the slow file requests.
 * We scaled the ``celery`` Deployment from 6 to 10 Pods, to handle the load of
