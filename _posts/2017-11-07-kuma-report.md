@@ -129,7 +129,7 @@ had over 900 downloads last month.
 
 Shipped Tweaks and Fixes
 ---
-There were 276 PRs merged in August:
+There were 276 PRs merged in October:
 
 - [131 mdn/browser-compat-data PRs](https://github.com/mdn/browser-compat-data/pulls?page=1&q=is:pr+is:closed+merged:"2017-10-01..2017-10-31"&utf8=✓)
 - [42 mozilla/kuma PRs](https://github.com/mozilla/kuma/pulls?page=1&q=is:pr+is:closed+merged:"2017-10-01..2017-10-31"&utf8=✓)
@@ -333,8 +333,8 @@ and everyone else who worked on or influenced this first phase of the project.
 The migration project
 [rebooted in Summer 2016](https://docs.google.com/document/d/1q0rNBieya_9NPqjWYX93_QwEge-K2wqLPPvdtZGyinE).
 We switched to targeting Mozilla Marketing's deployment environment. I split
-the work was split into smaller steps leading up to AWS.  I thought each step
-would take about a month. They took about 3 months each. Estimating is hard.
+the work into smaller steps leading up to AWS.  I thought each step would take
+about a month. They took about 3 months each. Estimating is hard.
 
 ![2016 MDN Tech Plan]({{ site.baseurl }}/public/images/kuma/2017-10-MDN-Tech-Plan-2016.svg)
 
@@ -478,8 +478,7 @@ If a Node fails, replacement Pods will be created on surviving Nodes.
 The Kubernetes system allows several ways to scale the application. We used
 some for handling the unexpected load of the user attachments:
 
-* We went from 10 to 12 Nodes, to increase the total capacity of the Cluster,
-  then back down again when we got things under control.
+* We went from 10 to 11 Nodes, to increase the total capacity of the Cluster.
 * We scaled the ``web`` Deployment from 6 to 20 Pods, to handle more
   simultaneous connections, including the slow file requests.
 * We scaled the ``celery`` Deployment from 6 to 10 Pods, to handle the load of
