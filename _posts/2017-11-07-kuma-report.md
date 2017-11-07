@@ -278,7 +278,9 @@ collaborating on a
 for MDN, based on the BCD data.
 The new format summarizes support across desktop and mobile browsers, while
 still allowing developers to dive into the implementation details. We'll ship
-this to beta users on 2200 MDN pages in November.
+this to beta users on 2200 MDN pages in November. See
+[Beta Testing New Compatability Tables](https://discourse.mozilla.org/t/beta-testing-new-compatability-tables/21269)
+on Discourse for more details.
 
 ![New Compat Table]({{ site.baseurl }}/public/images/kuma/2017-10-BCD-table.png)
 
