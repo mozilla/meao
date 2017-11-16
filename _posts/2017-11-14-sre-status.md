@@ -14,7 +14,7 @@ Here's what happened on the MozMEAO SRE team from November 7th - November 14th.
 ### Firefox Quantum release
 
 The team actively monitored our [bedrock](https://github.com/mozilla/bedrock) Kubernetes deployments during the release of [Firefox Quantum]
-(https://www.mozilla.org/en-US/firefox/). No changes or manual intervention was required during the release.
+(https://www.mozilla.org/en-US/firefox/). No manual intervention was required during the release.
 
 ### SRE General
 
