@@ -38,7 +38,7 @@ The team actively monitored our [bedrock](https://github.com/mozilla/bedrock) Ku
 - [Stalled asset loading leading to high load times](https://github.com/mozmeao/infra/issues/648)
 - [Optimize prefetch_related usage in revisions dashboard](https://github.com/mozilla/kuma/pull/4520)
 
-### Static site hostings
+### Static site hosting
 
 The team is in the process of evaluating the following static hosting solutions:
 
