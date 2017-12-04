@@ -158,15 +158,15 @@ average page download time by 71% (0.57s to 0.16s), and contributed to a
  {{ site.baseurl }}/public/images/kuma/2017-11-gzip.png
  "71% drop from 0.57s to 0.16s due to GZip")
 
-Heavy load due to scraping caused a few 2 to 5 minute downtimes. We worked to
-improve the performance of unpopular pages that get high traffic from scrapers,
-such as document list views
+Heavy load due to scraping caused a 6 downtimes totaling 35 minutes.
+We worked to improve the performance of unpopular pages that get high traffic
+from scrapers, such as document list views
 ([PR 4463](https://github.com/mozilla/kuma/pull/4463) from
 [John Whitlock](https://github.com/jwhitlock)) and the revisions dashboard
 ([PR 4520](https://github.com/mozilla/kuma/pull/4520) from
 [Josh Mize](https://github.com/jgmize)). This made the system more resilient.
 
-Kubernetes was contributing to the downtime, by restarting web servers when
+Kubernetes was contributing to the downtimes, by restarting web servers when
 they started to undergo heavy load and were slow to respond.  We've adjusted
 our "readiness" and "liveness" probes so that Kubernetes will be more patient
 and more gentle
