@@ -8,13 +8,14 @@ excerpt_separator: <!--more-->
 Here's what happened in November in
 [Kuma](https://github.com/mozilla/kuma),
 the engine of
-[MDN](https://developer.mozilla.org):
+[MDN Web Docs](https://developer.mozilla.org):
 
 - [Shipped the first 21 interactive examples](#interactive-nov-2017)
 - [Added browser versions, <code>list-style-type</code>, and even more Browser Compatibility Data](#bcd-nov-2017)
 - [Shipped a sticky table of contents and other article improvements](#article-nov-2017)
 - [Improved MDN in AWS and Kubernetes](#aws-nov-2017)
-- [Shipped tweaks and fixes](#tweaks-nov-2017)
+- [Shipped tweaks and fixes](#tweaks-nov-2017) by merging 260 pull requests,
+  including 33 pull requests from 27 new contributors.
 
 We're planning on [more of the same](#next-nov-2017) for December.
 
@@ -135,7 +136,7 @@ Stephanie also refreshed the style of the sidebar links.
  {{ site.baseurl }}/public/images/kuma/2017-11-quick-links.png)
 
 Stephanie also updated the visual hierarchy of article headings. This is most
-noticeable on <code>&lt;h2&gt;</code> elements, which are now indented with
+noticeable on <code>&lt;h3&gt;</code> elements, which are now indented with
 black space.
 
 ![New &lt;h3&gt; style](
@@ -158,7 +159,7 @@ average page download time by 71% (0.57s to 0.16s), and contributed to a
  {{ site.baseurl }}/public/images/kuma/2017-11-gzip.png
  "71% drop from 0.57s to 0.16s due to GZip")
 
-Heavy load due to scraping caused a 6 downtimes totaling 35 minutes.
+Heavy load due to scraping caused 6 downtimes totaling 35 minutes.
 We worked to improve the performance of unpopular pages that get high traffic
 from scrapers, such as document list views
 ([PR 4463](https://github.com/mozilla/kuma/pull/4463) from
