@@ -44,3 +44,10 @@ validation-report.json
 # Folders to ignore
 node_modules
 bower_components
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+# requests_cache file
+github_cache.sqlite
