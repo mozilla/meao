@@ -227,6 +227,9 @@ Other significant PRs:
 Planned for January
 ===
 
+We're contining on existing projects like BCD in January, and starting some
+larger projects that will start to ship in February.
+
 <a name="cdn-dec-17">Prepare for a CDN
 ---
 We've exhausted the easy solutions for increasing availability on MDN. We
@@ -269,7 +272,9 @@ and [more](https://developer.mozilla.org/en-us/search?locale=en-us&kumascript_ma
 
 We have many more interactive examples ready to publish, including
 [many JavaScript examples](https://github.com/mdn/interactive-examples/tree/master/live-examples/js-examples)
-by [Mark Boas](https://github.com/maboa). We'll roll these and more out to MDN. Follow
+by [Mark Boas](https://github.com/maboa). We'll roll these and more out to MDN.
+We'll also start on HTML interactive examples, and we're planning to ship them
+in February. Follow
 [mdn/interactive-examples](https://github.com/mdn/interactive-examples) to see
 the progress and learn how to help.
 
