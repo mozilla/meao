@@ -18,10 +18,10 @@ the engine of
   by merging 209 pull requests,
   including 13 pull requests
   from 11 new contributors.
-  
 
 Here's the plan for January:
 
+- [Prepare for a CDN](#cdn-dec-17)
 - [Ship more interactive examples](#more-interactive-dec-17)
 - [Update Django to 1.11](#django-dec-17)
 - [Plan for 2018](#2018-dec-17)
