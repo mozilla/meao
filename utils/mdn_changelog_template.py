@@ -1,11 +1,11 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
-Generates the Kuma Report Template. Requires 3rd-party libraries
+Generates the MDN Changelog Template. Requires 3rd-party libraries
 requests and requests_cache, and the Client ID and Secret from
 your GitHub OAuth app. Usage:
 
-kuma_report_template.py <client_id> <client_secret> > _drafts/kuma_report.md
+mdn_report_template.py <client_id> <client_secret> > _drafts/mdn_changelog.md
 """
 from __future__ import unicode_literals, print_function
 from argparse import ArgumentParser
@@ -35,18 +35,20 @@ repos = {
     ('mozmeao', 'infra'): 'Infra'
 }
 
+post_author = 'John Whitlock'
+
 
 template = """\
 ---
 layout: post
-title: Kuma Report, %(month)s %(year)d
-author: John Whitlock
+title: MDN Changelog for %(month)s %(year)d
+author: %(post_author)s
 excerpt_separator: <!--more-->
 ---
 
-Here's what happened in %(month)s in
-[Kuma](https://github.com/mozilla/kuma),
-the engine of
+Here's what happened in %(month)s to the
+[code, data, and tools](https://github.com/mdn/)
+that support
 [MDN Web Docs](https://developer.mozilla.org):
 
 - [Item 1](#item1-%(month_id_suffix)s)
@@ -86,10 +88,13 @@ There were %(total)s PRs merged in %(month)s:
 
 %(pr_counts_text)s
 
-Many of these were from external contributors, including several first-time
-contributions. Here are some of the highlights:
+%(prs_from_new_users)s of these were from first-time contributors:
 
-%(pr_details)s
+%(pr_first_details)s
+
+Other significant PRs:
+
+%(pr_other_details)s
 
 Planned for %(next_month)s
 ===
@@ -109,8 +114,8 @@ Thing we promised last month
 """
 
 
-def get_report(client_id, client_secret):
-    """Create the Kuma Report template for the month."""
+def get_changelog(client_id, client_secret):
+    """Create the MDN Changelog template for the month."""
     month = pick_month()
     next_month = month + timedelta(days=28)
     while next_month.month == month.month:
@@ -120,7 +125,7 @@ def get_report(client_id, client_secret):
     pr_data = get_pr_data(repos.keys(), client_id, client_secret)
     user_data = get_user_data(pr_data, client_id, client_secret)
     pr_counts_text, pr_counts = get_pr_counts(pr_data, month, last_day)
-    pr_details, total, new_users, new_prs = get_pr_details(
+    pr_first_entries, new_users, new_prs, pr_other_entries = get_pr_details(
         pr_data, user_data, month, last_day, pr_counts)
 
     params = {
@@ -128,18 +133,20 @@ def get_report(client_id, client_secret):
         'next_month': next_month.strftime('%B'),
         'month_id_suffix': month.strftime('%b-%y').lower(),
         'year': month.year,
-        'total': total,
+        'total': new_prs + len(pr_other_entries),
         'pr_counts_text': pr_counts_text,
-        'pr_details': pr_details,
+        'pr_first_details': '\n'.join(pr_first_entries),
+        'pr_other_details': '\n'.join(pr_other_entries),
         'prs_from_new_users': new_prs,
-        'new_users': new_users
+        'new_users': new_users,
+        'post_author': post_author,
     }
 
     return template % params
 
 
 def pick_month():
-    """Pick the report month based on current date.
+    """Pick the changelog month based on current date.
 
     The month is picked by which end-of-month is closest.
     For example, on Oct 20th and November 5th, October is picked.
@@ -166,7 +173,7 @@ def get_pr_data(repos, client_id, client_secret):
 
 
 class PullRequest(object):
-    """Represents a merged  GitHub pull request."""
+    """Represents a merged GitHub pull request."""
     def __init__(self, owner, repo, github_response):
         """Initialize from the GitHub API response."""
         self.owner = owner
@@ -236,6 +243,9 @@ def get_pr_data_for_repo(owner, repo, client_id, client_secret):
 
 class User(object):
     """Represents a GitHub user."""
+
+    ANY = '_any_'  # Key for pr_merge_range, any commit
+
     def __init__(self, github_response):
         """Initialize from the GitHub API response."""
         self.username = github_response['login']
@@ -247,19 +257,30 @@ class User(object):
         """Add a merged PullRequest."""
         key = (pr_obj.owner, pr_obj.repo)
         self.prs[key].append(pr_obj)
+        self.update_pr_merge_range(key, pr_obj.merged_at)
+        self.update_pr_merge_range(self.ANY, pr_obj.merged_at)
+
+    def update_pr_merge_range(self, key, merged_at):
         if key in self.pr_merge_range:
             start, end = self.pr_merge_range[key]
-            if pr_obj.merged_at < start:
-                start = pr_obj.merged_at
-            if pr_obj.merged_at > end:
-                end = pr_obj.merged_at
+            if merged_at < start:
+                start = merged_at
+            if merged_at > end:
+                end = merged_at
         else:
-            start, end = pr_obj.merged_at, pr_obj.merged_at
+            start, end = merged_at, merged_at
         self.pr_merge_range[key] = (start, end)
 
-    def is_new(self, owner, repo, start, end):
+    def is_new_to_repo(self, owner, repo, start, end):
         """Is the user a new contributor in this range?"""
-        key = (owner, repo)
+        return self._first_in_range((owner, repo), start, end)
+
+    def is_new_to_any(self, start, end):
+        """Is the user a new contributor to any repo?"""
+        return self._first_in_range(self.ANY, start, end)
+
+    def _first_in_range(self, key, start, end):
+        """Is the user's first contribution by key in the range?"""
         if key not in self.pr_merge_range:
             return False
         merge_start, merge_end = self.pr_merge_range[key]
@@ -350,44 +371,109 @@ def md_escape(raw):
     return escaped
 
 
+entry_template = (
+    "- %(title_wrap)s\n"
+    "  ([%(repo_short)s PR %(number)s]"
+    "(https://github.com/%(owner)s/%(repo)s/pull/%(number)s)),\n"
+    "  from\n"
+    "  [%(fullname)s](https://github.com/%(username)s).")
+first_entry_template = (
+    "- %(title_wrap)s\n"
+    "  ([PR %(number)s]"
+    "(https://github.com/%(owner)s/%(repo)s/pull/%(number)s)),\n"
+    "  from\n"
+    "  [%(fullname)s](https://github.com/%(username)s)\n"
+    "  (first contribution to %(repo_short)s)."
+)
+one_of_many_entries_template = (
+    "%(title_wrap)s\n"
+    "  ([PR %(number)s]"
+    "(https://github.com/%(owner)s/%(repo)s/pull/%(number)s)),\n"
+)
+first_to_any_repo_multi_entry_template = (
+    "- %(multi_entries)s  and\n"
+    "  %(multi_last_entry)s"
+    "  to %(repo_short)s from\n"
+    "  [%(fullname)s](https://github.com/%(username)s)."
+)
+first_to_this_repo_mutli_entry_template = (
+    "- %(multi_entries)s  and\n"
+    "  %(multi_last_entry)s"
+    "  from\n"
+    "  [%(fullname)s](https://github.com/%(username)s)\n"
+    "  (first contributions to %(repo_short)s)."
+)
+
+
 def get_pr_details(pr_data, user_data, start, end, counts):
     """Create summaries of the PRs merged."""
-    entry_tmpl = (
-        "- %(title_wrap)s\n"
-        "  ([%(repo_short)s PR %(number)s]"
-        "(https://github.com/%(owner)s/%(repo)s/pull/%(number)s)),\n"
-        "  from%(first_time)s\n"
-        "  [%(fullname)s](https://github.com/%(username)s).")
-    entries = []
+    pr_firsts = defaultdict(OrderedDict)  # Entries for first-time contributors
+    pr_other_entries = []  # Entries for existing contributors
     new_usernames = set()
-    new_prs = 0
+    prs_from_new_users = 0
     for key in counts:
         for owner, repo, number, pr in pr_data:
             if key == (owner, repo) and (start <= pr.merged_at.date() <= end):
                 title_wrap = '  '.join(wrap(md_escape(pr.title), 75))
                 user = user_data[pr.username]
-                is_new = user.is_new(owner, repo, start, end)
-                if is_new:
-                    new_usernames.add(pr.username)
-                    new_prs += 1
-                entries.append(entry_tmpl % {
+                is_new_to_repo = user.is_new_to_repo(owner, repo, start, end)
+                is_new_to_any = user.is_new_to_any(start, end)
+                entry_data = {
                     'repo_short': repos[key],
                     'number': number,
                     'owner': owner,
                     'repo': repo,
                     'title_wrap': title_wrap,
-                    'first_time': ' first-time contributor' if is_new else '',
                     'fullname': user.fullname,
                     'username': pr.username,
+                    'is_new_to_any': is_new_to_any,
+                }
+                if user.fullname == post_author:
+                    entry_data['fullname'] = 'me'
+                if is_new_to_repo:
+                    prs_from_new_users += 1
+                    new_usernames.add(pr.username)
+                    pr_firsts[key].setdefault(pr.username, [])
+                    pr_firsts[key][pr.username].append(entry_data)
+                else:
+                    pr_other_entries.append(entry_template % entry_data)
+
+    # Format first contributions
+    pr_first_entries = []
+    for key in counts:
+        for users, entries in pr_firsts[key].items():
+            if len(entries) == 1:
+                entry = entries[0]
+                if entry['is_new_to_any']:
+                    template = entry_template
+                else:
+                    template = first_entry_template
+            else:
+                # Combine multiple first contributions to a repo
+                multi_entries = [one_of_many_entries_template % entry
+                                 for entry in entries]
+                entry = entries[0].copy()
+                entry.update({
+                    'multi_entries': '  '.join(multi_entries[:-1]),
+                    'multi_last_entry': multi_entries[-1]
                 })
-    details = "\n".join(entries)
-    total = len(entries)
-    return details, total, len(new_usernames), new_prs
+                if entry['is_new_to_any']:
+                    template = first_to_any_repo_multi_entry_template
+                else:
+                    template = first_to_this_repo_mutli_entry_template
+            pr_first_entries.append(template % entry)
+
+    return (
+        pr_first_entries,
+        len(new_usernames),
+        prs_from_new_users,
+        pr_other_entries,
+    )
 
 
 def get_args():
     parser = ArgumentParser(
-        description='Generates the Kuma Report template.',
+        description='Generates the MDN Changelog template.',
         epilog=("To create an OAuth app, see "
                 " https://github.com/settings/developers"))
     parser.add_argument('client_id', type=str, help='GitHub OAuth2 client ID')
@@ -402,7 +488,8 @@ def get_args():
 
 if __name__ == '__main__':
     args = get_args()
-    requests_cache.install_cache(args.cachefile)
-    report = get_report(args.client_id, args.client_secret)
+    requests_cache.install_cache(args.cachefile,
+                                 expire_after=timedelta(days=3))
+    report = get_changelog(args.client_id, args.client_secret)
     print("Done!", file=sys.stderr)
     print(report.encode('utf8'))
