@@ -58,7 +58,9 @@ and highlighted the
 [compat-report addon](https://addons.mozilla.org/en-US/firefox/addon/compat-report/)
 by [Eduardo Bouças](https://twitter.com/eduardoboucas)
 that uses the data to highlight compatibility issues in a developer tools tab.
-Florian also gave a talk about the project on February 3 at
+Florian also gave
+[a talk about the project](https://video.fosdem.org/2018/UA2.118/)
+on February 3 at
 [FOSDEM 18](https://fosdem.org/2018/schedule/event/mozilla_mdn_browser_compat_data_project/).
 We're excited to tell people about this new resource, and see what people will
 do with this data.
