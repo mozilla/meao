@@ -128,16 +128,24 @@ database usage by changing how async processes store state
 ([PR 4615](https://github.com/mozilla/kuma/pull/4615)) and using long-lasting
 database connections to reduce time spent establishing per-request connections
 ([PR 4644](https://github.com/mozilla/kuma/pull/4644)).
+
 [Safwan Rahman](https://github.com/safwanrahman) took a close look at the
 database usage for wiki pages, and made several changes to reduce both the
 number of queries and the size of the data transmitted from the database
-([PR 4630](https://github.com/mozilla/kuma/pull/4630)). All of these add up
-to a 10% to 15% improvement in server response time from December's
-performance.
+([PR 4630](https://github.com/mozilla/kuma/pull/4630)). This last change has
+significantly reduced the network traffic to the database.
 
+![network-traffic-drop](
+ {{ site.baseurl }}/public/images/kuma/2018-01-network-traffic-drop.png
+ "Network traffic dropped afer shipping PR 4630")
 ![response-time](
  {{ site.baseurl }}/public/images/kuma/2018-01-response-time.png
  "New Relic response time after shipping PR 4630")
+
+All of these add up
+to a 10% to 15% improvement in server response time from December's
+performance.
+
 
 [Ryan Johnson](https://github.com/escattone) continued work on the long-term
 solution, to serve MDN content from a CDN. This requires getting our caching
