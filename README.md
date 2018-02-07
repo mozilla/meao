@@ -11,8 +11,7 @@ This is the source code repository for the
 ./docker-run.sh
 ```
 
-This will take 2-3 minutes to start on macOS, with no output, due to a slow
-``chmod`` operation in the Jekyll image.
+This will take about a minute to start on macOS.
 
 The site (with drafts) is available at http://localhost:4000/meao/
 
