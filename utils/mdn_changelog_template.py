@@ -70,19 +70,19 @@ Here's the plan for %(next_month)s:
 Done in %(month)s
 ===
 
-<a name="item1-%(month_id_suffix)s">Item 1
+<a name="item1-%(month_id_suffix)s">Item 1</a>
 ---
 Here's the first item, including lots of images.
 
-<a name="item2-%(month_id_suffix)s">Item 2
+<a name="item2-%(month_id_suffix)s">Item 2</a>
 ---
 The second item is also important.
 
-<a name="item3-%(month_id_suffix)s">Item 3
+<a name="item3-%(month_id_suffix)s">Item 3</a>
 ---
 Everyone stopped reading.
 
-<a name="tweaks-%(month_id_suffix)s">Shipped Tweaks and Fixes
+<a name="tweaks-%(month_id_suffix)s">Shipped Tweaks and Fixes</a>
 ---
 There were %(total)s PRs merged in %(month)s:
 
@@ -100,15 +100,15 @@ Planned for %(next_month)s
 ===
 Intro
 
-<a name="plan1-%(month_id_suffix)s">Plan 1
+<a name="plan1-%(month_id_suffix)s">Plan 1</a>
 ---
 Main effort
 
-<a name="plan2-%(month_id_suffix)s">Plan 2
+<a name="plan2-%(month_id_suffix)s">Plan 2</a>
 ---
 Second effort
 
-<a name="plan3-%(month_id_suffix)s">Plan 3
+<a name="plan3-%(month_id_suffix)s">Plan 3</a>
 ---
 Thing we promised last month
 """
@@ -328,6 +328,14 @@ def get_links(link_header):
     return links
 
 
+filtered_prs_template = (
+    "https://github.com/%(owner)s/%(repo)s/pulls?"
+    "page=1"
+    "&utf8=✓"
+    "&q=is:pr+is:closed"
+    "+merged:\"%(start)s..%(end)s\"")
+
+
 def get_pr_counts(pr_data, start, end):
     """Create links to merged PR lists, with counts."""
 
@@ -338,10 +346,8 @@ def get_pr_counts(pr_data, start, end):
             counts[(owner, repo)] += 1
 
     # Create Markdown links to the GitHub paginated view
-    line_tmpl = ("- [%(count)s %(owner)s/%(repo)s PR%(s)s]"
-                 "(https://github.com/%(owner)s/%(repo)s/pulls?"
-                 "page=1&q=is:pr+is:closed"
-                 "+merged:\"%(start)s..%(end)s\"&utf8=✓)")
+    line_tmpl = ("- [%(count)s %(owner)s/%(repo)s PR%(s)s](" +
+                 filtered_prs_template + ")")
     lines = []
     repo_counts = OrderedDict()
     for key, count in counts.most_common():
@@ -404,13 +410,17 @@ first_to_this_repo_mutli_entry_template = (
     "  (first contributions to %(repo_short)s)."
 )
 
+remaining_prs_template = (
+    "[%(remaining)d more PRs](" + filtered_prs_template +
+    "+author:%(username)s)\n")
+
 
 def get_pr_details(pr_data, user_data, start, end, counts):
     """Create summaries of the PRs merged."""
     pr_firsts = defaultdict(OrderedDict)  # Entries for first-time contributors
     pr_other_entries = []  # Entries for existing contributors
-    new_usernames = set()
-    prs_from_new_users = 0
+    new_usernames = defaultdict(set)
+    prs_from_new_users = Counter()
     for key in counts:
         for owner, repo, number, pr in pr_data:
             if key == (owner, repo) and (start <= pr.merged_at.date() <= end):
@@ -431,8 +441,8 @@ def get_pr_details(pr_data, user_data, start, end, counts):
                 if user.fullname == post_author:
                     entry_data['fullname'] = 'me'
                 if is_new_to_repo:
-                    prs_from_new_users += 1
-                    new_usernames.add(pr.username)
+                    prs_from_new_users[key] += 1
+                    new_usernames[key].add(pr.username)
                     pr_firsts[key].setdefault(pr.username, [])
                     pr_firsts[key][pr.username].append(entry_data)
                 else:
@@ -453,10 +463,22 @@ def get_pr_details(pr_data, user_data, start, end, counts):
                 multi_entries = [one_of_many_entries_template % entry
                                  for entry in entries]
                 entry = entries[0].copy()
-                entry.update({
-                    'multi_entries': '  '.join(multi_entries[:-1]),
-                    'multi_last_entry': multi_entries[-1]
-                })
+                if len(multi_entries) <= 3:
+                    entry.update({
+                        'multi_entries': '  '.join(multi_entries[:-1]),
+                        'multi_last_entry': multi_entries[-1]
+                    })
+                else:
+                    remaining = entry.copy()
+                    remaining.update({
+                        'remaining': len(multi_entries) - 2,
+                        'start': start.isoformat(),
+                        'end': end.isoformat()
+                    })
+                    entry.update({
+                        'multi_entries': ' '.join(multi_entries[:2]),
+                        'multi_last_entry': remaining_prs_template % remaining
+                    })
                 if entry['is_new_to_any']:
                     template = first_to_any_repo_multi_entry_template
                 else:
@@ -465,8 +487,8 @@ def get_pr_details(pr_data, user_data, start, end, counts):
 
     return (
         pr_first_entries,
-        len(new_usernames),
-        prs_from_new_users,
+        len(set.union(*new_usernames.values())),
+        sum(prs_from_new_users.values()),
         pr_other_entries,
     )
 
