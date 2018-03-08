@@ -21,7 +21,7 @@ that support
 
 Here's the plan for March:
 
-- [Developers move to Emerging Technologies](#et-feb-18)
+- [Move developers to Emerging Technologies](#et-feb-18)
 - [Meet in Paris for Hack on MDN](#paris-feb-18)
 - [Evaluate proposals for a performance audit](#rfp-performace-feb-18)
 
@@ -84,13 +84,21 @@ demo from [Rachel Andrew](https://github.com/rachelandrew):
  "Demo of the clip-path attribute with an ellipse setting")
 
 We're expanding the framework to allow for HTML examples, which often
-need a mix of HTML and CSS to be interesting. Like previous efforts, we're
-getting feedback by showing the work-in-progress to individual developers,
-watching how they use it, and iterating.
+need a mix of HTML and CSS to be interesting. Like previous efforts,
+we're using
+[user testing](https://discourse.mozilla.org/t/html-interactive-editor-user-testing/26368)
+to develop this feature. We show the work-in-progress, like the
+[&lt;table&gt; demo](https://developer.mozilla.org/en-US/docs/User:wbamberg/HTML_editor_user_test_pages/table),
+to an individual developer, watch how the demo is used and ask for feedback,
+and then iterate on the design and implementation.
 
 ![html-table](
  {{ site.baseurl }}/public/images/kuma/2018-02-html-table.png
  "Demo of the HTML table element with styling")
+
+The demos have gone well, and the team will firm up the implementation and
+write more examples to prepare for production. The team will also work on
+expanding test coverage and formalizing the build tools in a new package.
 
 <a name="kuma-feb-18">Prepared for a CDN and Django 1.11</a>
 ---
@@ -441,12 +449,12 @@ Planned for March
 We'll continue with the compatibility migration, interactive examples, the CDN,
 and the Django 1.11 migration in March.
 
-<a name="et-feb-18">Developers Move to Emerging Technologies</a>
+<a name="et-feb-18">Move developers to Emerging Technologies</a>
 ---
-Starting March 2, the MDN developers (Ryan, Schalk, and I) will move from
-Marketing to Emerging Technologies.  We'll be working on the details of this
-transition in March and the coming months. That will include finding a new
-home for the MDN Changelog.
+Starting March 2, the MDN developers move from Marketing to Emerging
+Technologies.  We'll be working on the details of this transition in March and
+the coming months. That will include planning a infrastructure transition, and
+finding a new home for the MDN Changelog.
 
 [Stephanie Hobson](https://github.com/stephaniehobson) and I joined Marketing
 Engineering and Operations in March 2016, back when it was still Engagement
@@ -504,8 +512,9 @@ benefited from this amazing team in many ways:
 * [Ben Sternthal](https://github.com/bensternthal) made the transition
   into Marketing possible. He made us feel welcome from day one, hired
   [some amazing contractors](https://groups.google.com/d/msg/mozilla.dev.mdn/phVYeWfRlWc/A8PWb1IxEAAJ)
-  to help with the dark days of the 
-  [2016 spam attack](https://wiki.mozilla.org/MDN/Projects/SPAM_Fight), and
+  to help with the dark days of the
+  [2016 spam attack](https://wiki.mozilla.org/MDN/Projects/SPAM_Fight), hired
+  [Ryan Johnson](https://github.com/escattone), and
   worked for the resources and support to move to AWS. He created a space where
   developers could talk about what is important to us, where we spent time
   and effort on technical improvements and career advancement, and where
@@ -516,13 +525,13 @@ for the next chapter in its 13 year history.
 
 Ryan Johnson, Schalk Neethling, and I will join the Advanced Development team
 in Emerging Technologies, reporting to
-[Faramarz Rashed](https://twitter.com/frashed). This team has been working on
-various ET projects, most recently
+[Faramarz Rashed](https://twitter.com/frashed). The Advanced Development team
+has been working on various ET projects, most recently
 [Project Things](https://blog.mozilla.org/blog/2018/02/06/announcing-project-things-open-framework-connecting-devices-web/),
 an Internet of Things (IoT) project that is focused on decentralization,
 security, privacy, and interoperability. It's a team that is focused on
-getting fresh technology into user's hands. This is a great environment for
-MDN's next phase, as we build on the more stable foundation and expand our
+getting fresh technology into users' hands. This is a great environment for
+the next phase of MDN, as we build on the more stable foundation and expand our
 reach.
 
 <a name="paris-feb-18">Meet in Paris for Hack on MDN</a>
