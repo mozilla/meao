@@ -68,7 +68,7 @@ We also ping DMS on every database update run, so we should know quickly if eith
 
 ## Conclusions
 
-We obviously don't yet know the long-term affects and consequences of this change (as of writing it's been in production less than a day),
+We obviously don't yet know the long-term effects and consequences of this change (as of writing it's been in production less than a day),
 but for now our operational complexity and costs are lower. I feel confident calling it a win for our deployment reliability for now.
 Bedrock may eventually move toward having a large part of it pre-generated and hosted statically, but for now this version feels like the
 one that will be as robust, resilient, and reliable as possible while still being one big Django web application.
