@@ -6,7 +6,7 @@ excerpt_separator: <!--more-->
 ---
 
 On it's face [www.mozilla.org](https://www.mozilla.org/) doesn't look like it'd be a complex application to write, maintain, or run.
-But when you throw over 100 Million unique visitors per week at any site it can complicate things quickly. Add to that translations
+But when you throw over 100 million unique visitors per week at any site it can complicate things quickly. Add to that translations
 of the content into over 100 languages and you can start to get the idea of where it might get interesting. So we take every
 opportunity to simplify and reduce hosting complexity and cost we can get. This is the place from which the idea to
 [switch to using SQLite](https://github.com/mozilla/bedrock/pull/5334) for our database needs in production was born.
@@ -52,7 +52,7 @@ credentials since the database is publicly available.
 Along with actually performing the updates in every running instance of the site we also need to be able to monitor that said updates
 are actually happening. To this end we created [a page on the site](https://www.mozilla.org/healthz-cron/) that will give us some
 data on when the last time that instance ran the update, the git hash of bedrock that is currently running, the git hash used to
-create the database in use, and how long ago said database was updated. This page will also respond with a 500 code instead of the nomral 200 if the DB and L10n update tasks happened too long ago. At the time of writing the updates happen every 5 minutes, and the page would
+create the database in use, and how long ago said database was updated. This page will also respond with a 500 code instead of the normal 200 if the DB and L10n update tasks happened too long ago. At the time of writing the updates happen every 5 minutes, and the page would
 start to fail at 10 minutes of no updates. Since the updates and the site are running in separate processes in the Docker container, we
 need a way for the cron process to communicate to the web server the time of the last run for these tasks. For this we decided on
 files in `/tmp` that the cron jobs will simply `touch`, and the web server can get the `mtime` (check out
