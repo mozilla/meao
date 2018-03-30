@@ -35,7 +35,7 @@ the metadata to ensure a successful download, and swap it with the old file atom
 symlinks for this but it turns out to be harder to re-point a symlink than to just do the rename which atomically overwrites the old file
 with the new (I'm pretty sure it's actually just updating the inode to which the name points but I've not verified that).
 
-When all of this is working it means that bedrock no longer requires a database server. We can turn of our AWS RDS instances and never
+When all of this is working it means that bedrock no longer requires a database server. We can turn off our AWS RDS instances and never
 have to worry about DB server maintenance or downtime. The site isn't all that much faster since like I said it's mostly spending time
 rendering Jinja templates, but it is a lot cheaper to run and less likely to go down. We are also making DB schema changes easier and
 more error-free since the DB filenames include the git hash of the version of bedrock that created it. This means that the production
