@@ -5,7 +5,7 @@ author: Paul McLanahan
 excerpt_separator: <!--more-->
 ---
 
-On it's face [www.mozilla.org](https://www.mozilla.org/) doesn't look like it'd be a complex application to write, maintain, or run.
+On its face [www.mozilla.org](https://www.mozilla.org/) doesn't look like it would be a complex application to write, maintain, or run.
 But when you throw over 100 million unique visitors per week at any site it can complicate things quickly. Add to that translations
 of the content into over 100 languages and you can start to get the idea of where it might get interesting. So we take every
 opportunity to simplify and reduce hosting complexity and cost we can get. This is the place from which the idea to
