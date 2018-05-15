@@ -2,6 +2,7 @@
 layout: post
 title: Django, K8s, and ELB Health checks
 author: Paul McLanahan
+author_url: https://twitter.com/pmclanahan
 excerpt_separator: <!--more-->
 ---
 

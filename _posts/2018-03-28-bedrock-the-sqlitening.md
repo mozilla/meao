@@ -2,6 +2,7 @@
 layout: post
 title: "Bedrock: The SQLitening"
 author: Paul McLanahan
+author_url: https://twitter.com/pmclanahan
 excerpt_separator: <!--more-->
 ---
 
