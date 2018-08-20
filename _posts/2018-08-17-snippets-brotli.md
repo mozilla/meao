@@ -6,29 +6,33 @@ author_url: https://giorgos.sealabs.net
 excerpt_separator: <!--more-->
 ---
 
-The Snippets Service allows Mozilla to communicate with Firefox users directly
-by placing a snippet of text and an image on their homepage. Snippets share
-exciting news from the Mozilla World, useful tips and tricks based on user
-activity and sometimes jokes.
+The [Snippets Service](https://github.com/mozilla/snippets-service/) allows
+Mozilla to communicate with Firefox users directly by placing a snippet of text
+and an image on their new tab page. Snippets share exciting news from the
+Mozilla World, useful tips and tricks based on user activity and sometimes
+jokes.
 
 To achieve personalized, activity based messaging in a privacy respecting and
-efficient manner, the service creates a Bundle of Snippets per locale. The
-complete Bundle is transferred to the client where a locally executed algorithm
-decides which snippet to display. A carefully designed system with multiple
-levels of caching takes care of the delivery. One layer of caching is CloudFront
-CDN.
+efficient manner, the service creates a Bundle of Snippets per locale. Bundles
+are HTML documents that contain all Snippets targeted to a group of users,
+including their Style-Sheets, images, metadata and the JS decision engine.
+
+The Bundle is transferred to the client where the locally executed decision
+engine selects a snippet to display. A carefully designed system with multiple
+levels of caching takes care of the delivery. One layer of caching is a
+CloudFront CDN.
 
 
 ## The problem
 
-During the last months we observed a significant uptake of our CDN costs as the
+During the last months we observed a significant uptake of our CDN costs as
 Mozilla's Lifecycle Marketing Team was increasing the number of Snippets for the
 English language from about 10 to 150.
 
-The Bundle file-size increased from about 200 KiB to more than 4MiB, which
-translated to more bytes transferred using the CDN and thus higher bills. Given
-that Firefox requests new bundles every 4 hours, this quickly became a issue
-that needed attention.
+The Bundle file-size increased from about 200 KiB to more than 4MiB. Given that
+Firefox requests new Bundles every 4 hours that translated to about 75 TB of
+transferred data per day or about 2.25 PB (yes, that's Petabytes!) of data
+transferred per month, despite the local browser caching.
 
 <!--more-->
 
@@ -63,12 +67,13 @@ CDN.
 
 Although all three solutions can reduce the Bundle size, the third provided the
 best performance to effort ratio and we proceeded with implementation. Next day
-reports graphed a significant drop on costs marking the project a success. We
-are going to further improve in the future by moving the images outside the
+reports graphed a significant drop on costs marking the project a success. From
+the original average of 75TB transferred data per day, we dropped down to 15TB.
+We are going to further improve in the future by moving the images outside the
 Bundle.
 
 It's clear that Brotli compression can achieve significantly higher compression
-rates compared to GZip at the expenses of more CPU time. Even though our CDN of
+rates compared to GZip at the expense of more CPU time. Even though our CDN of
 choice doesn't support Brotli, assets can be pre-compressed and uploaded ready
 for use.
 
