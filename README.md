@@ -50,3 +50,5 @@ and do not have a date in the filename, such as
 ``_drafts/my-cool-blog-post.md``. They are useful for authoring a post, and
 then moving it to the ``_posts`` folder when you are ready for a PR.  Drafts
 must be enabled in ``jekyll`` to view drafts.
+
+## Enjoy!
